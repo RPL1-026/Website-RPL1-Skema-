@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Struktur Kelas</title>
+
+<!-- font -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+  rel="stylesheet"
+/>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.4/collection/components/icon/icon.min.css"
+    />
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- navbar start-->
+    <nav class="navbar">
+      <a href="#" class="navbar-logo">RPL<span>1</span>.</a>
+      <div class="navbar-nav">
+        <a href="index.html">Beranda</a>
+        <a href="aboute.html">Tentang Kami</a>
+        <a href="walisiswa.html">Wali & Siswa</a>
+        <a href="gallery.html">Galeri Kelas</a>
+      </div>
+      <div class="navbar-extra">
+        <a
+          href="https://www.instagram.com/booksrplsatu?igsh=NHdheDl5Zjd3c254"
+          target="_blank"
+        >
+          <ion-icon id="instagram-icon" name="logo-instagram"></ion-icon>
+        </a>
+        <a
+          href="https://www.tiktok.com/@booksrpl1?_t=8pKVwnWacuW&_r=1"
+          target="_blank"
+        >
+          <ion-icon id="tiktok-icon" name="logo-tiktok"></ion-icon>
+        </a>
+        <a href="#" id="hamburger-menu">
+          <ion-icon name="menu-outline"></ion-icon>
+        </a>
+      </div>
+    </nav>
+    <!-- navbar end -->
+
+    <!-- profile section start -->
+
+    <section id="profile-section" class="profile-background">
+    <h2>Wali <span>&</span> Siswa</h2>
+    <!-- Wali Kelas -->
+    <div class="card teacher-card" onclick="toggleDetails(this)">
+      <img
+        src="https://lh3.googleusercontent.com/pw/AP1GczM6Zdb0LwnebsJ3u26nAiKKJ51E-7iXRbnntamEmJA5NZk3VKc1Jc1nUxjx0QuRZI2QKV01WA5VCNdt9TpkE4PdLQQpBANwhtx2dXNewswGrQe6NyEmEpwjH7IvdIFgLTRNGgiSottgTAqP9xi_QjE=w445-h445-s-no-gm?authuser=0"
+        alt="Siti Mahmudah"
+        class="profile-pic"
+      />
+      <h3>Siti Mahmudah, M.Kom</h3>
+      <p>Wali Kelas</p>
+      <!-- <div class="details">
+        <p><strong>Tempat Tinggal:</strong> Alamat Wali Kelas</p>
+        <p><strong>Tanggal Lahir:</strong> 1 Januari 1980</p>
+        <p><strong>Hobi:</strong> Membaca, Berkebun</p>
+      </div> -->
+    </div>
+
+    <!-- Murid-Murid -->
+    <div class="student-cards">
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Abel" class="profile-pic" />
+        <h3>Abel Nova Azzahrah</h3>
+        <div class="details">
+          <p><strong>Makanan favorit :</strong> </p>
+          <p><strong>Genre musik favorit :</strong> </p>
+          <p><strong>Serial/Film favorit :</strong> </p>
+          <p><strong>Kekuatan super impian :</strong> </p>
+          <p><strong>Hobi :</strong> </p>
+          <p><strong>Kutipan :</strong> </p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Bunga" class="profile-pic" />
+        <h3>Adelia Bunga Febrianti</h3>
+        <div class="details">
+          <p><strong>Makanan favorit :</strong> </p>
+          <p><strong>Genre musik favorit :</strong> </p>
+          <p><strong>Serial/Film favorit :</strong> </p>
+          <p><strong>Kekuatan super impian :</strong> </p>
+          <p><strong>Hobi :</strong> </p>
+          <p><strong>Kutipan :</strong> </p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Alif" class="profile-pic" />
+        <h3>Alif Alfan</h3>
+        <div class="details">
+          <p><strong>Makanan favorit :</strong> </p>
+          <p><strong>Genre musik favorit :</strong> </p>
+          <p><strong>Serial/Film favorit :</strong> </p>
+          <p><strong>Kekuatan super impian :</strong> </p>
+          <p><strong>Hobi :</strong> </p>
+          <p><strong>Kutipan :</strong> </p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Annisa" class="profile-pic" />
+        <h3>Annisa Nur Fadlilah</h3>
+        <div class="details">
+          <p><strong>Makanan favorit :</strong> </p>
+          <p><strong>Genre musik favorit :</strong> </p>
+          <p><strong>Serial/Film favorit :</strong> </p>
+          <p><strong>Kekuatan super impian :</strong> </p>
+          <p><strong>Hobi :</strong> </p>
+          <p><strong>Kutipan :</strong> </p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczP7rEvsBsqsQEbKOCa59ERBOuHSIXLpVTriDVmiKcB4kgOaC-hdbPGrjpueQI0cwnKoaEOHVhyvc2DEJSWR_L0OzMWjyvolL6qzlig2lzAfn8xf7pkvAWgO_jU3otJYoQaIDltiXUnYjR58SfIXMEc=w913-h913-s-no-gm?authuser=0" alt="Aulia" class="profile-pic" />
+        <h3>Aulia Arin Maftuckah</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Brillian" class="profile-pic" />
+        <h3>Brillian Yusuf Sejati</h3>
+        <div class="details">
+          <p><strong>Makanan favorit :</strong> </p>
+          <p><strong>Genre musik favorit :</strong> </p>
+          <p><strong>Serial/Film favorit :</strong> </p>
+          <p><strong>Kekuatan super impian :</strong> </p>
+          <p><strong>Hobi :</strong> </p>
+          <p><strong>Kutipan :</strong> </p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Dian" class="profile-pic" />
+        <h3>Dian Putri Kartikasari</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczPCtcfW60EuIMZ2lkZS3FlgyaF88-D3QGHVAKb1AHX09HsrM7Q-IujpUTO_K8v39_o4EeoVgMK6hS79FHWRKHeKv0UHJGTGWiUflz_Zg4OQxUaw7qp7sIUKMuOPW5syXRDdybsTbne7d0_pgbYlov8=w913-h913-s-no-gm?authuser=0" alt="Dimar" class="profile-pic" />
+        <h3>Dimar Nur Arifin</h3>
+        <div class="details">
+          <p><strong>Makanan favorit :</strong> Nasgor</p>
+          <p><strong>Genre musik favorit :</strong> Pop</p>
+          <p><strong>Serial/Film favorit :</strong> A Silent Voice</p>
+          <p><strong>Kekuatan super impian :</strong> Pengendali Waktu</p>
+          <p><strong>Hobi :</strong> Menonton Anime</p>
+          <p><strong>Kutipan :</strong> "Kenalilah dirimu sendiri"</p>
+          <a href="https://www.instagram.com/dimar.na?igsh=cDgyeW9qbWFtcHFi" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://www.tiktok.com/@babyy_nuts?_t=8pUNnnyY3FK&_r=1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNTUn57w5pjXd5dyPTk3Qf1vlKLZv3TQfHauN_fB8NtSM-KW6IUU4nDKYG9k_OJmtihlFDsEBB2VuKDFiLNkGjNiKtrWFjeko5bYJjXGSW6iX3pnev0i186-ONkNqqz6qr-hJxgz-AckwHX1F1qhCM=w913-h913-s-no-gm?authuser=0" alt="Dinda" class="profile-pic" />
+        <h3>Dinda Puspita</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMjk1CX5owVcFgbYVQJLZXiANI-K4L7XhBtiblJxYrguBqRDXFPuH6UzGU84y_f8YTQKAqOLj0dRc48Zz0PfoiWOpT7GCQyUw2Xs0kxJTaNBmzOedsrqs0efAeiFGyx1Q_wNZ3z9vUfQHioH1c5C3w=w576-h576-s-no-gm?authuser=0" alt="Eleen" class="profile-pic" />
+        <h3>Ellen Aulia Nafisa</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Enggar" class="profile-pic" />
+        <h3>Enggar Widyaningrum</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Erlita" class="profile-pic" />
+        <h3>Erlita Deva Agustina</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Faris" class="profile-pic" />
+        <h3>Faris Elfrida Hadriyansyah</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Ferlyana" class="profile-pic" />
+        <h3>Ferlyana Glady Savila</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczOdsaOFCNMTDLizv8IANm5ehdi9lqlHD_hgWcuLqb_umefSt4BvD4J3EKIEYh4ooM2C7sLVTxx1oyv1ZHvYz64RrotMp2_FsPN0ZHMu0t2v1evQFCav_y_KmQXejcyElU5ic5nvky9Y-a9m9nnyhvQ=w606-h606-s-no-gm?authuser=0" alt="Ferlyana" class="profile-pic" />
+        <h3>Ghofur Reza Ananta</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Kalibareng, Patean</p>
+          <p><strong>Tanggal Lahir:</strong> 27 November 2008</p>
+          <p><strong>Hobi:</strong>  Mancing</p>
+          <p><strong>Kutipan:</strong> -</p>
+          <a href="https://www.tiktok.com/@rezy_445?_t=8pUN4Pl4e99&_r=1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Intan" class="profile-pic" />
+        <h3>Intan Cahaya Salsabila</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Intan Melisa" class="profile-pic" />
+        <h3>Intan Melisa Nur Aeni</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNGVEsFB6gfejURAHSjU4ktZ8XOus6tteYz5YHcXI-eqnp5iDzAjav7uXkYuAETimsCpbUAmxHiQ9l6TbRBkQpoH_6x5P15o5S-EI5CiPd8khIwOEhG5iRCI1UuzPqoDkP3i_LMUOoccrOzjrwrjFk=w913-h913-s-no-gm?authuser=0" alt="Jasmine" class="profile-pic" />
+        <h3>Jasmine Nurmaulidha</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Jazilla" class="profile-pic" />
+        <h3>Jazila Maftukha</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Kayla" class="profile-pic" />
+        <h3>Kayla Nazwa Eliza</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Kharisma" class="profile-pic" />
+        <h3>Kharisma Aulia Faigrima</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczOB7UoaAxAF9u9MMiP35cBasdGaOtfEmf6YvQSjMPPqhxe_xnCsCSDYafflyI_IZ0kJeNy-u7rYaf-8sLZq57TIEbf_9gxkPl5VmLai65Hj823WulRKr_-2TZuakGDFj9VSpucnff05gog3eNXuyV4P=w720-h720-s-no-gm?authuser=0" alt="Mecha" class="profile-pic" />
+        <h3>Kharissa Kurnia Mecha</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Marlina" class="profile-pic" />
+        <h3>Marlina Indah Sari</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczPf0anGZazQP6scq0FcXExHkuHGiwayZEAwYMcuVCTgufHlJK3XGVlQdnywvpG2t3es45FkVPIvoL3L-YXCF45F1xNCEKD4vjPEO6fGo0dDdjFqpUxrKUsTSwy_UKvYJP-dVwLYmENkLYuKZLag4zrw=w913-h913-s-no-gm?authuser=0" alt="Maulana" class="profile-pic" />
+        <h3>Maulana Jihaniyavi</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczM4VNXKjA7sbSqjAWfThQtl0ptPHx00iYfuZ6DsB_hhnRse2NQjbmkeCwK6uMlfT7wZIC10PW7NfGc3TGuL5a0SrDYQMYT-NOHllZBe1jvZ1ngIvKx1vL5V8H4XI2TfFe_pcF81ShIA_9KMHV2lhvU7=w913-h913-s-no-gm?authuser=0" alt="Nalasari" class="profile-pic" />
+        <h3>Nalasari Aghniya</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Nayla" class="profile-pic" />
+        <h3>Nayla Karima Zahirannisa</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Naysilla" class="profile-pic" />
+        <h3>Naysilla Ramadhani</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Nessa" class="profile-pic" />
+        <h3>Nessa Mike Ardinasari</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Arga" class="profile-pic" />
+        <h3>Nur Alif Arga Prastia</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Putra" class="profile-pic" />
+        <h3>Putra Abdurrahman Muhammad</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Ella" class="profile-pic" />
+        <h3>Risma Ella widayanti</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Risti" class="profile-pic" />
+        <h3>Risti Munthoharoh</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Rofiatun" class="profile-pic" />
+        <h3>Rofiatun</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczPBActM8Le9zwYACBSS8uOymyoUjaC_i0sEw6OAcfmFoSOm0yvgWgQc88FN4iHNhiiUoXms8sr1Q0RgtoGP1lIlE21nUIHlGzP6CxKfR6TN0_tu02gMRgbut-Lxn73DceFoMsLr6I6PRtQ535LeD2VY=w576-h569-s-no-gm?authuser=0" alt="Vina" class="profile-pic" />
+        <h3>Vina Layinatu Syifa</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Widya" class="profile-pic" />
+        <h3>Widya Anindita</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img src="pp.jpeg" alt="Yulia" class="profile-pic" />
+        <h3>Yulia Deviani</h3>
+        <div class="details">
+          <p><strong>Tempat Tinggal:</strong> Alamat Murid 1</p>
+          <p><strong>Tanggal Lahir:</strong> 1 Januari 2005</p>
+          <p><strong>Hobi:</strong> Sepak Bola, Membaca</p>
+          <a href="https://instagram.com/murid1" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://tiktok.com/@murid1" target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+    </div>
+    </section>
+
+    <!-- Ionicons script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.4/ionicons/ionicons.esm.js"
+      type="module"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.4/ionicons/ionicons.js"
+      nomodule
+    ></script>
+    <!-- js -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
