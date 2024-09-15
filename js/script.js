@@ -96,6 +96,13 @@ function closePopup() {
   quotePopup.classList.remove("show");
 }
 
+document.querySelectorAll('.navbar .navbar-nav a').forEach(link => {
+  if (link.href === window.location.href) {
+    link.classList.add('active');
+  }
+});
+
+
 // JavaScript untuk toggle details 
         function toggleDetails(card) {
             const details = card.querySelector('.details');
