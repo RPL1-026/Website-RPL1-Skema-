@@ -71,7 +71,7 @@ body {
   content: '';
   display: block;
   padding-bottom: 0.5rem;
-  border-bottom: 100% solid var(--hover);
+  border-bottom: 0.1rem solid var(--hover);
   transform: scaleX(0);
   transition: transform 0.3s ease, color 0.3s ease; /* Tambahkan transisi untuk semua ikon */
 }
