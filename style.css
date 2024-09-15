@@ -4,7 +4,7 @@
   --text: #ededed;
   --hover: #ffd700;
   --hamburger-size: 2.5rem; /* Ukuran ikon hamburger */
-  --icon-size: 2.0rem; /* Ukuran ikon Instagram dan TikTok */
+  --icon-size: 1.8rem; /* Ukuran ikon Instagram dan TikTok */
   --line-height: 2.5rem; /* Line height sesuai dengan ukuran ikon terbesar */
 }
 
@@ -64,7 +64,7 @@ body {
 
 .navbar .navbar-nav a:hover {
   color: var(--hover);
-  transform: scale(1.05);
+  transform: scale(1.025);
 }
 
 .navbar .navbar-nav a::after {
@@ -83,13 +83,13 @@ body {
 
 #instagram-icon:hover {
   color: var(--hover);
-  transform: scale(1.05);
+  transform: scale(1.025);
   transition: transform 0.3s ease, color 0.3s ease; /* Tambahkan transisi untuk semua ikon */
 }
 
 #tiktok-icon:hover {
   color: var(--hover);
-  transform: scale(1.05);
+  transform: scale(1.025);
   transition: transform 0.3s ease, color 0.3s ease; /* Tambahkan transisi untuk semua ikon */
 }
 
@@ -110,9 +110,20 @@ body {
 
 .navbar .navbar-extra a:hover {
   color: var(--hover);
-  transform: scale(1.05);
+  transform: scale(1.025);
   transition: transform 0.3s ease, color 0.3s ease; /* Tambahkan transisi untuk semua ikon */
 }
+
+.navbar .navbar-nav a.active {
+  color: var(--hover); /* Warna ketika page aktif */
+}
+
+.navbar .navbar-nav a.active::after {
+  transform: scaleX(1);
+  border-bottom: 0.1rem solid var(--hover);
+  transition: transform 0.3s ease;
+}
+
 
 /* hero section */
 .hero {
@@ -133,7 +144,7 @@ body {
   width: 100%;
   height: 30%;
   bottom: 0;
-  background: linear-gradient(0deg, rgba(1, 1, 3, 0.800) 8%, rgba(255, 255, 255, 0) 50%);
+  background: linear-gradient(0deg, rgba(1, 1, 3, 0.400) 8%, rgba(255, 255, 255, 0) 70%);
 }
 
 .hero .content {
@@ -301,7 +312,7 @@ body {
 #profile-section.profile-background {
   min-height: 100vh;
   width: 100%;
-  background-image: url('https://lh3.googleusercontent.com/pw/AP1GczMaxRvOrNUVAB3_KG0hUBF17XmaH7hqwJmyxkJvHdgYf3AFxenFQAUhYsst-PKTHazxB8_PPCMVvqGvMGp5m195_IIsy3ocJI43rGP5rMJdvl31K2wntWjmGt6hapM08ItC4VOmrLeCJi5WJBoWGpw=w1623-h913-s-no-gm?authuser=0');
+  background-image: url('https://lh3.googleusercontent.com/pw/AP1GczMPmfj8iRcZg76hsUdtvEHQhUdnVqka3IvaFaLodH9TT_IxCOACCVM4pju-mc6pB8E7uPI6ZawfA-wX0Z8LC7jkZPNDVnazg50CkJbZupO2HbA0l5-npvMlDeFUhrQwOTvyaVw-a3r8ulZpswqkOkNc=w1623-h913-s-no-gm?authuser=0');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -327,7 +338,8 @@ h2 span {
 
 /* Card styles */
 .card {
-  background: rgba(255, 255, 255, 0.1);
+  /* background: rgba(255, 255, 255, 0.1); */
+  background: rgba(237, 237, 237, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
