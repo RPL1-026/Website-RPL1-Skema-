@@ -33,8 +33,8 @@ body {
   background: rgba(27, 28, 30, 0.4); /* More transparency */
   backdrop-filter: blur(10px); /* Apply blur for glassmorphism effect */
   -webkit-backdrop-filter: blur(10px); /* Support for Safari */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle white border */
-  border-radius: 10px; /* Optional: rounded corners for a smoother look */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle white border */
+  border-radius: 0.5rem; /* Optional: rounded corners for a smoother look */
   position: fixed;
   top: 0;
   left: 0;
@@ -119,7 +119,7 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-image: url('https://lh3.googleusercontent.com/pw/AP1GczPuWBf0iRVtOFeMsmTGS_FHCoZOA61UaE723W2O6DlWruM6pHM5pHc7Xd-engi9RzPCdCbyMpzU4IQh0WQ7sH8ydd_vzPCfkJj8_-nwFK0PxeuJdE5NjM6Lc3O-1mOUDxwTXPEoPIozdqvFFsTH3fk=w1623-h913-s-no-gm?authuser=0');
+  background-image: url('https://lh3.googleusercontent.com/pw/AP1GczMWlbFJ8pn8b2-uLwv3WzcaT8QfuOOARp7gkdT1m9YxvCRJWOthc5YDvHvIJOHh7XbN1XF-OAM61iLOS29Gq8dTRKN9xRbEo3lb0wedBKnbxt8c7zt5Gs6OOH382pG05eUoE3eZAZcbBm9lf0qlatWx=w1623-h913-s-no-gm?authuser=0');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
