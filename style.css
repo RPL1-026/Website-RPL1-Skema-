@@ -585,9 +585,9 @@ h2 span {
 
 .navbar .navbar-nav a {
   color: var(--text);
-  display: block;
-  margin: 1.5rem;
-  padding: 0.5rem;
+  display: flexbox;
+  margin: 1rem;
+  padding: 0.8rem;
   font-size: 2rem;
 }
 
@@ -596,7 +596,7 @@ h2 span {
 }
 
 .navbar .navbar-nav a:hover::after {
-  transform: scaleX(0.2);
+  transform: scaleX(1);
 }
 }
 
