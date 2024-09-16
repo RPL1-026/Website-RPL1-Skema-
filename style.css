@@ -574,7 +574,7 @@ h2 span {
     top: 100%;
     right: -100%;
     background-color: #3a3f5c;
-    width: 30rem;
+    width: 28rem;
     height: 100vh;
     transition: right 0.3s;
   }
