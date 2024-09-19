@@ -34,7 +34,8 @@ body {
   backdrop-filter: blur(10px); /* Apply blur for glassmorphism effect */
   -webkit-backdrop-filter: blur(10px); /* Support for Safari */
   border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle white border */
-  border-radius: 0.5rem; /* Optional: rounded corners for a smoother look */
+ border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
   position: fixed;
   top: 0;
   left: 0;
