@@ -111,32 +111,67 @@ document.querySelectorAll('.navbar .navbar-nav a').forEach(link => {
             details.style.display = isVisible ? 'none' : 'block';
         }
 
-// Dapatkan elemen modal
+// Dapatkan semua item gallery dan tambahkan event listener
+var galleryItems = document.querySelectorAll(".gallery-item img");
+var currentIndex = 0;
 var modal = document.getElementById("imageModal");
-
-// Dapatkan elemen modal gambar
 var modalImg = document.getElementById("imgModal");
 var captionText = document.getElementById("caption");
 
-// Dapatkan semua item gallery dan tambahkan event listener
-var galleryItems = document.querySelectorAll(".gallery-item img");
-galleryItems.forEach(function(item) {
+galleryItems.forEach(function(item, index) {
   item.addEventListener("click", function() {
-    modal.style.display = "block";
-    modalImg.src = this.src; // Set gambar modal dengan gambar yang diklik
-    captionText.innerHTML = this.alt; // Set caption gambar
+    currentIndex = index; // Set index saat gambar diklik
+    openModal(currentIndex);
   });
 });
 
-// Dapatkan elemen span (close button) dan tambahkan event listener untuk menutup modal
+function openModal(index) {
+  modal.style.display = "block";
+  modalImg.src = galleryItems[index].src; // Set gambar modal dengan gambar yang diklik
+  captionText.innerHTML = galleryItems[index].alt; // Set caption gambar
+}
+
+// Tombol close untuk menutup modal
 var span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
-  modal.style.display = "none"; // Sembunyikan modal saat tombol close diklik
+  modal.style.display = "none";
+}
+
+// Tombol "Sebelumnya"
+var prev = document.getElementsByClassName("prev")[0];
+prev.onclick = function() {
+  currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length; // Pindah ke gambar sebelumnya
+  openModal(currentIndex);
+}
+
+// Tombol "Selanjutnya"
+var next = document.getElementsByClassName("next")[0];
+next.onclick = function() {
+  currentIndex = (currentIndex + 1) % galleryItems.length; // Pindah ke gambar selanjutnya
+  openModal(currentIndex);
 }
 
 // Menutup modal jika user mengklik di luar gambar
 window.onclick = function(event) {
   if (event.target == modal) {
-    modal.style.display = "none"; // Tutup modal saat area luar gambar diklik
+    modal.style.display = "none";
   }
 }
+
+// Event listener untuk keyboard navigation
+document.addEventListener("keydown", function(event) {
+  if (modal.style.display === "block") {
+    if (event.key === "ArrowLeft" || event.key === "a" || event.key === "A") {
+      // Navigasi ke kiri (gambar sebelumnya)
+      currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+      openModal(currentIndex);
+    } else if (event.key === "ArrowRight" || event.key === "d" || event.key === "D") {
+      // Navigasi ke kanan (gambar selanjutnya)
+      currentIndex = (currentIndex + 1) % galleryItems.length;
+      openModal(currentIndex);
+    } else if (event.key === "Escape") {
+      // Menutup modal saat tombol Escape ditekan
+      modal.style.display = "none";
+    }
+  }
+});
