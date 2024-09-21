@@ -576,7 +576,7 @@ h2 span {
 }
 
 .prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  ccolor: var(--hover);
 }
 /* Galeri Akhir */
 
