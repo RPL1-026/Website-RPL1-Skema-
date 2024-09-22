@@ -149,8 +149,9 @@ body {
 }
 
 .hero .content {
-  padding: 1.8rem;
   max-width: 46rem;
+  padding: 1.8rem;
+  padding-top: 4rem;
 }
 
 .homeimg img {
