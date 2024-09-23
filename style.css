@@ -160,8 +160,8 @@ body {
   min-width: 460px;
   padding: 1.2rem;
   padding-top: 2.4rem;
-  animation: floatImage 4s ease-in-out infinite;
-  -webkit-animation: floatImage 4s ease-in-out infinite;
+  animation: floatImage 3s ease-in-out infinite;
+  -webkit-animation: floatImage 3s ease-in-out infinite;
 }
 @keyframes floatImage {
   0% {
