@@ -34,7 +34,7 @@ body {
   backdrop-filter: blur(10px); /* Apply blur for glassmorphism effect */
   -webkit-backdrop-filter: blur(10px); /* Support for Safari */
   border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle white border */
- border-bottom-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   position: fixed;
   top: 0;
@@ -188,7 +188,7 @@ body {
 }
 
 .hero .content h1 {
- font-size: 5em;
+ font-size: 5rem;
  color: var(--text);
  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
  line-height: 1.1;
