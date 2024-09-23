@@ -128,13 +128,15 @@ body {
 /* hero section */
 .hero {
   min-width: 100%;
+  min-height: 100%;
   display: flex;
+  position: fixed;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   align-content: center;
   padding: 0 5%;
-  margin-top: 6rem;
+  padding-top: 6rem;
   gap: 5%;
 }
 
