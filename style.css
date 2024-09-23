@@ -677,7 +677,7 @@ h2 span {
 /* mobile */
 @media (max-width: 450px) {
   html {
-    font-size: 55%;
+    font-size: 50%;
   }
   .homeimg img {
     min-width: 320px;
