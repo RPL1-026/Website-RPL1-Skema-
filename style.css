@@ -41,7 +41,7 @@ body {
   left: 0;
   right: 0;
   z-index: 9999;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 173, 192, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(13, 185, 215, 0.5);
 }
 
 .navbar .navbar-logo {
@@ -208,7 +208,7 @@ body {
   border-radius: 0.5rem;
   backdrop-filter: blur(4px); /* Apply blur to background */
   -webkit-backdrop-filter: blur(10px); /* Support for Safari */
-  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(13, 185, 215, 0.5);
   border: 1px solid rgba(13, 185, 215, 100); /* Optional: Add a border with a more visible primary color */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
@@ -373,10 +373,9 @@ h2 span {
 /* Card styles */
 .card {
   /* background: rgba(255, 255, 255, 0.1); */
-  background: rgba(237, 237, 237, 0.1);
+  background : rgba(18, 18, 18, 0.6);
   backdrop-filter: blur(10px);
   border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   text-align: center;
   padding: 30px 20px; /* Konsisten padding dalam card */
@@ -384,7 +383,7 @@ h2 span {
   transition: transform 0.3s ease;
   cursor: pointer;
   position: relative;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 173, 192, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(13, 185, 215, 0.5);
 }
 
 .card:hover {
