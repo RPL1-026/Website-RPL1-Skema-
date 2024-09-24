@@ -103,13 +103,37 @@ document.querySelectorAll('.navbar .navbar-nav a').forEach(link => {
 });
 
 
-// JavaScript untuk toggle details 
-        function toggleDetails(card) {
-            const details = card.querySelector('.details');
-            const isVisible = details.style.display === 'block';
-            document.querySelectorAll('.details').forEach(detail => detail.style.display = 'none');
-            details.style.display = isVisible ? 'none' : 'block';
-        }
+// JavaScript untuk toggle details dengan layout flex
+function toggleDetails(card) {
+  const details = card.querySelector('.details').innerHTML;
+  const profilePicSrc = card.querySelector('.profile-pic').src;
+  const name = card.querySelector('h3').textContent;
+
+  const modal = document.getElementById('details-modal');
+  const modalDetails = document.getElementById('modal-details');
+
+  // Menambahkan foto profil dan nama ke modal
+  modalDetails.innerHTML = `
+    <img src="${profilePicSrc}" alt="${name}" class="profile-pic">
+    <div>
+      <h3>${name}</h3>
+      ${details}
+    </div>
+  `;
+  
+  modal.style.display = 'block'; // Tampilkan modal
+}
+
+// Fungsi untuk menutup modal saat klik di luar modal
+window.onclick = function(event) {
+  const modal = document.getElementById('details-modal');
+  if (event.target == modal) {
+    modal.style.display = 'none'; // Sembunyikan modal
+  }
+};
+
+
+
 
 // Dapatkan semua item gallery dan tambahkan event listener
 var galleryItems = document.querySelectorAll(".gallery-item img");
