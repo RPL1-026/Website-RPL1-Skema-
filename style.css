@@ -40,7 +40,7 @@ body {
   left: 0;
   right: 0;
   z-index: 9999;
-  border-bottom: 2px solid rgba(13, 185, 215, 0.7); /* Optional: Add a border with a more visible primary color */
+  border-bottom: 2px solid var(--primary); /* Optional: Add a border with a more visible primary color */
 }
 
 .navbar .navbar-logo {
@@ -190,7 +190,7 @@ body {
   backdrop-filter: blur(4px); /* Apply blur to background */
   -webkit-backdrop-filter: blur(10px); /* Support for Safari */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-  border: 2px solid rgba(13, 185, 215, 0.7); /* Optional: Add a border with a more visible primary color */
+  border: 2px solid var(--primary) /* Optional: Add a border with a more visible primary color */
 }
 
 .hero .content .button:hover {
@@ -367,7 +367,7 @@ h2 span {
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
   position: relative;
-  border: 2px solid rgba(13, 185, 215, 0.7); /* Optional: Add a border with a more visible primary color */
+  border: 2px solid var(--primary); /* Optional: Add a border with a more visible primary color */
 }
 
 .card:hover {
