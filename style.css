@@ -40,8 +40,6 @@ body {
   left: 0;
   right: 0;
   z-index: 9999;
-  box-shadow: 0 4px 15px rgba(13, 185, 215, 0.5),
-    0 0 10px rgba(13, 185, 215, 0.6); /* Glow yang halus */
   border-bottom: 2px solid rgba(13, 185, 215, 0.7); /* Optional: Add a border with a more visible primary color */
 }
 
@@ -67,7 +65,6 @@ body {
 
 .navbar .navbar-nav a:hover {
   color: var(--hover);
-  transform: scale(1.025);
 }
 
 .navbar .navbar-nav a::after {
@@ -86,14 +83,10 @@ body {
 
 #instagram-icon:hover {
   color: var(--hover);
-  transform: scale(1.025);
-  transition: transform 0.3s ease, color 0.3s ease; /* Tambahkan transisi untuk semua ikon */
 }
 
 #tiktok-icon:hover {
   color: var(--hover);
-  transform: scale(1.025);
-  transition: transform 0.3s ease, color 0.3s ease; /* Tambahkan transisi untuk semua ikon */
 }
 
 .navbar .navbar-extra a {
@@ -197,16 +190,12 @@ body {
   backdrop-filter: blur(4px); /* Apply blur to background */
   -webkit-backdrop-filter: blur(10px); /* Support for Safari */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-  box-shadow: 0 4px 15px rgba(13, 185, 215, 0.5),
-    0 0 10px rgba(13, 185, 215, 0.6); /* Glow yang halus */
   border: 2px solid rgba(13, 185, 215, 0.7); /* Optional: Add a border with a more visible primary color */
 }
 
 .hero .content .button:hover {
-  color: var(--hover);
-  transform: scale(1.05);
-  box-shadow: 0 4px 20px rgba(13, 185, 215, 0.6),
-    0 0 15px rgba(13, 185, 215, 0.8);
+  box-shadow: 0 4px 15px rgba(13, 185, 215, 0.5),
+  0 0 10px rgba(13, 185, 215, 0.6); /* Glow yang halus */
 }
 
 /* Style untuk pop-up */
@@ -378,15 +367,12 @@ h2 span {
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
   position: relative;
-  box-shadow: 0 4px 15px rgba(13, 185, 215, 0.5),
-    0 0 10px rgba(13, 185, 215, 0.6); /* Glow yang halus */
   border: 2px solid rgba(13, 185, 215, 0.7); /* Optional: Add a border with a more visible primary color */
 }
 
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 20px rgba(13, 185, 215, 0.6),
-    0 0 15px rgba(13, 185, 215, 0.8);
+  box-shadow: 0 4px 15px rgba(13, 185, 215, 0.5),
+    0 0 10px rgba(13, 185, 215, 0.6); /* Glow yang halus */
 }
 
 .profile-pic {
