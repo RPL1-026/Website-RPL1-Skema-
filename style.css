@@ -1,6 +1,6 @@
 :root {
   --primary: #0db9d7;
-  --bg: #1b1c1e;
+  --bg: #1e1e2c;
   --text: #ededed;
   --hover: #ffd700;
   --hamburger-size: 2.5rem; /* Ukuran ikon hamburger */
@@ -19,7 +19,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: var(--bg);
+  background: var(--bg);
   color: var(--text);
   /* min-height:800px; */
 }
@@ -30,10 +30,9 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.4rem 7%;
-  background: rgba(27, 28, 30, 0.4); /* More transparency */
+  background: rgba(30, 30, 44, 0.6); /* More transparency */
   backdrop-filter: blur(10px); /* Apply blur for glassmorphism effect */
   -webkit-backdrop-filter: blur(10px); /* Support for Safari */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle white border */
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   position: fixed;
@@ -41,7 +40,9 @@ body {
   left: 0;
   right: 0;
   z-index: 9999;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(13, 185, 215, 0.5);
+  box-shadow: 0 4px 15px rgba(13, 185, 215, 0.5),
+    0 0 10px rgba(13, 185, 215, 0.6); /* Glow yang halus */
+  border-bottom: 2px solid rgba(13, 185, 215, 0.7); /* Optional: Add a border with a more visible primary color */
 }
 
 .navbar .navbar-logo {
@@ -70,7 +71,7 @@ body {
 }
 
 .navbar .navbar-nav a::after {
-  content: '';
+  content: "";
   display: block;
   padding-bottom: 0.5rem;
   border-bottom: 0.1rem solid var(--hover);
@@ -81,7 +82,7 @@ body {
 .navbar .navbar-nav a:hover::after {
   transform: scaleX(0.6);
   transition: transform 0.3s ease, color 0.3s ease; /* Tambahkan transisi untuk semua ikon */
-} 
+}
 
 #instagram-icon:hover {
   color: var(--hover);
@@ -125,31 +126,18 @@ body {
   transition: transform 0.3s ease;
 }
 
-
 /* hero section */
 .hero {
   min-width: 100%;
-  min-height: 100%;
   display: flex;
-  position: fixed;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   align-content: center;
   padding: 0 5%;
-  padding-top: 6rem;
+  margin-top: 6rem;
   gap: 5%;
 }
-
-/* .hero::after {
-  content: '';
-  display: block;
-  position: fixed;
-  width: 100%;
-  height: 30%;
-  bottom: 0;
-  background: linear-gradient(0deg, rgba(1, 1, 3, 0.400) 8%, rgba(255, 255, 255, 0) 70%);
-} */
 
 .hero .content {
   max-width: 46rem;
@@ -163,8 +151,8 @@ body {
   min-width: 460px;
   padding: 1.2rem;
   padding-top: 2.4rem;
-  animation: floatImage 3s ease-in-out infinite;
-  -webkit-animation: floatImage 3s ease-in-out infinite;
+  animation: floatImage 4s ease-in-out infinite;
+  -webkit-animation: floatImage 4s ease-in-out infinite;
 }
 @keyframes floatImage {
   0% {
@@ -191,11 +179,11 @@ body {
 }
 
 .hero .content h1 {
- font-size: clamp(3.2rem, 8vw, 5rem);
- color: var(--text);
- text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
- line-height: 1.1;
- pointer-events: none;
+  font-size: clamp(4rem, 8vw, 5rem);
+  color: var(--text);
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.1;
+  pointer-events: none;
 }
 
 .hero .content .button {
@@ -204,18 +192,21 @@ body {
   padding: 1rem 3rem;
   font-size: 1.4rem;
   color: var(--text);
-  background: rgba(13, 185, 215, 0.10); /* Semi-transparent primary color */
+  background: rgba(30, 30, 44, 0.6); /* Semi-transparent primary color */
   border-radius: 0.5rem;
   backdrop-filter: blur(4px); /* Apply blur to background */
   -webkit-backdrop-filter: blur(10px); /* Support for Safari */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(13, 185, 215, 0.5);
-  border: 1px solid rgba(13, 185, 215, 100); /* Optional: Add a border with a more visible primary color */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  box-shadow: 0 4px 15px rgba(13, 185, 215, 0.5),
+    0 0 10px rgba(13, 185, 215, 0.6); /* Glow yang halus */
+  border: 2px solid rgba(13, 185, 215, 0.7); /* Optional: Add a border with a more visible primary color */
 }
 
 .hero .content .button:hover {
-  transform: scale(1.05); /* Slightly enlarge the button */
-  box-shadow: 2px 2px 8px rgba(1, 1, 3, 0.7); /* Enhance shadow on hover */
+  color: var(--hover);
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(13, 185, 215, 0.6),
+    0 0 15px rgba(13, 185, 215, 0.8);
 }
 
 /* Style untuk pop-up */
@@ -244,7 +235,7 @@ body {
   width: 80%;
   max-width: 400px;
   color: var(--text);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .close-btn {
@@ -279,7 +270,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.2); /* Warna scrollbar semi-transparan */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /* Warna scrollbar semi-transparan */
   border-radius: 50%; /* Border-radius 50% untuk bentuk bulat */
   border: 3px solid transparent; /* Membuat jarak agar tampak seperti kapsul */
   background-clip: padding-box; /* Menghindari warna scrollbar mengisi seluruh area */
@@ -329,7 +325,7 @@ body {
 .aboute .row .content h3 {
   font-size: 1.8rem;
   color: var(--text);
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
 }
 
 .aboute .row .content p {
@@ -346,7 +342,7 @@ body {
 #profile-section.profile-background {
   min-height: 100vh;
   width: 100%;
-/*   background-image: url('https://lh3.googleusercontent.com/pw/AP1GczMPmfj8iRcZg76hsUdtvEHQhUdnVqka3IvaFaLodH9TT_IxCOACCVM4pju-mc6pB8E7uPI6ZawfA-wX0Z8LC7jkZPNDVnazg50CkJbZupO2HbA0l5-npvMlDeFUhrQwOTvyaVw-a3r8ulZpswqkOkNc=w1623-h913-s-no-gm?authuser=0'); */
+  /*   background-image: url('https://lh3.googleusercontent.com/pw/AP1GczMPmfj8iRcZg76hsUdtvEHQhUdnVqka3IvaFaLodH9TT_IxCOACCVM4pju-mc6pB8E7uPI6ZawfA-wX0Z8LC7jkZPNDVnazg50CkJbZupO2HbA0l5-npvMlDeFUhrQwOTvyaVw-a3r8ulZpswqkOkNc=w1623-h913-s-no-gm?authuser=0'); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -372,22 +368,25 @@ h2 span {
 
 /* Card styles */
 .card {
-  /* background: rgba(255, 255, 255, 0.1); */
-  background : rgba(18, 18, 18, 0.6);
+  background: rgba(30, 30, 44, 0.6); /* More transparency */
   backdrop-filter: blur(10px);
   border-radius: 15px;
   overflow: hidden;
   text-align: center;
   padding: 30px 20px; /* Konsisten padding dalam card */
   margin: 20px; /* Konsisten jarak antar card */
-  transition: transform 0.3s ease;
   cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
   position: relative;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(13, 185, 215, 0.5);
+  box-shadow: 0 4px 15px rgba(13, 185, 215, 0.5),
+    0 0 10px rgba(13, 185, 215, 0.6); /* Glow yang halus */
+  border: 2px solid rgba(13, 185, 215, 0.7); /* Optional: Add a border with a more visible primary color */
 }
 
 .card:hover {
-  transform: translateY(-10px);
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(13, 185, 215, 0.6),
+    0 0 15px rgba(13, 185, 215, 0.8);
 }
 
 .profile-pic {
@@ -530,7 +529,8 @@ h2 span {
   height: 100%;
   object-fit: cover; /* Menjaga rasio 1:1 sebelum hover */
   border-radius: 10px;
-  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out,
+    height 0.3s ease-in-out;
 }
 
 .gallery-item img:hover {
@@ -585,7 +585,8 @@ h2 span {
 }
 
 /* Style untuk tombol "Sebelumnya" dan "Selanjutnya" */
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -609,8 +610,9 @@ h2 span {
   border-radius: 3px 0 0 3px;
 }
 
-.prev:hover, .next:hover {
-  ccolor: var(--hover);
+.prev:hover,
+.next:hover {
+  color: var(--hover);
 }
 /* Galeri Akhir */
 
@@ -648,39 +650,43 @@ h2 span {
     position: absolute;
     top: 100%;
     right: -100%;
-    background-color: #3a3f5c;
+    background: rgba(58, 63, 92, 0.900);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(1000px); /* Apply blur for glassmorphism effect */
+    -webkit-backdrop-filter: blur(10px); /* Support for Safari */
     width: 28rem;
     height: 100vh;
     transition: right 0.3s;
+    z-index: 1000;
   }
 
   .navbar .navbar-nav.active {
     right: 0;
   }
 
-.navbar .navbar-nav a {
-  color: var(--text);
-  display: flexbox;
-  margin: 1rem;
-  padding: 0.6rem;
-  font-size: 2rem;
-}
+  .navbar .navbar-nav a {
+    color: var(--text);
+    display: flexbox;
+    margin: 1rem;
+    padding: 0.6rem;
+    font-size: 2rem;
+  }
 
-.navbar .navbar-nav a::after {
-  transform-origin: 0 0;
-}
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
 
-.navbar .navbar-nav a:hover::after {
-  transform: scaleX(1);
-}
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(1);
+  }
 }
 
 /* mobile */
 @media (max-width: 450px) {
   html {
-    font-size: 50%;
+    font-size: 55%;
   }
   .homeimg img {
-    min-width: 320px;
+    min-width: 360px;
   }
 }
