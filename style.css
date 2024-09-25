@@ -395,21 +395,27 @@ h2 span {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
   background-color: rgba(0, 0, 0, 0.7); /* Background semi-transparan */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Memastikan modal selalu di tengah secara vertikal dan horizontal */
 }
 
 /* Modal content styled like a card */
 .modal-content.card-style {
-  background: rgba(30, 30, 44, 0.6);
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   padding: 30px;
-  width: 90%;
-  max-width: 500px; /* Ukuran card */
-  margin: 10% auto;
-  display: flex; /* Gunakan flexbox untuk tata letak */
-  align-items: center; /* Posisikan foto dan detail sejajar secara vertikal */
+  width: 90%; /* Mengurangi lebar modal pada perangkat kecil */
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex; /* Flexbox untuk tata letak gambar dan teks */
+  align-items: center;
+  margin-top: auto; /* Auto margin untuk memusatkan secara vertikal */
+  margin-bottom: auto;
 }
 
 /* Profile picture inside modal */
@@ -418,25 +424,42 @@ h2 span {
   height: 6rem;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 20px; /* Beri jarak antara foto dan detail */
+  margin-right: 20px; /* Jarak antara foto dan detail */
 }
 
 /* Details inside modal */
 #modal-details {
-  flex-grow: 1; /* Membuat detail menempati sisa ruang di sebelah foto */
+  flex-grow: 1;
+  text-align: left; /* Detail teks rata kiri */
 }
 
 #modal-details p {
   margin: 5px 0;
-  color: white; /* Sesuaikan warna teks */
+  color: white;
 }
 
 #modal-details h3 {
-  color: var(--primary); /* Warna utama untuk nama */
+  color: var(--primary);
   margin-bottom: 10px;
 }
 
+/* Menyesuaikan modal pada perangkat mobile */
+@media only screen and (max-width: 600px) {
+  .modal-content.card-style {
+    flex-direction: column; /* Gambar dan detail vertikal pada perangkat kecil */
+    align-items: flex-start; /* Rata kiri untuk elemen */
+    padding: 20px;
+  }
 
+  .modal-content .profile-pic {
+    margin-bottom: 20px; /* Beri jarak bawah pada gambar di perangkat kecil */
+    margin-right: 0;
+  }
+
+  #modal-details {
+    text-align: left; /* Pastikan teks rata kiri pada mobile */
+  }
+}
 
 
 /* Responsive grid layout */
