@@ -30,7 +30,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.4rem 7%;
-  background: rgba(58, 63, 92, 0.1); /* More transparency */
+  background: rgba(58, 63, 92, 0.2); /* More transparency */
   backdrop-filter: blur(10px); /* Apply blur for glassmorphism effect */
   -webkit-backdrop-filter: blur(10px); /* Support for Safari */
   border-bottom-left-radius: 0.5rem;
@@ -187,7 +187,7 @@ body {
   color: var(--text);
   font-weight: 700;
   background: var(--bg);
-  background: rgba(58, 63, 92, 0.1); /* Semi-transparent primary color */
+  background: rgba(58, 63, 92, 0.2); /* Semi-transparent primary color */
   border-radius: 0.5rem;
   backdrop-filter: blur(4px); /* Apply blur to background */
   -webkit-backdrop-filter: blur(10px); /* Support for Safari */
@@ -358,7 +358,7 @@ h2 span {
 
 /* Card styles */
 .card {
-  background: rgba(58, 63, 92, 0.1); /* More transparency */
+  background: rgba(58, 63, 92, 0.2); /* More transparency */
   backdrop-filter: blur(10px);
   border-radius: 15px;
   overflow: hidden;
