@@ -167,6 +167,7 @@ body {
   width: 36rem;
   max-width: 91%;
   min-width: 40%;
+  height: min-content;
   background: rgba(58, 63, 92, 0.4);
   backdrop-filter: blur(10px);
   border-top-left-radius: 20px;
@@ -193,7 +194,7 @@ body {
 }
 
 .chat-header h2 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin: 0;
   padding: 0;
   color: var(--primary);
@@ -201,7 +202,9 @@ body {
 }
 
 .chat-output {
-  height: 16vw;
+  height: 20vw;
+  max-height: 18rem;
+  min-height: 12rem;
   overflow-y: auto;
   margin-top: 8px;
   border-radius: 10px;
@@ -304,7 +307,7 @@ li {
   }
 
   .chat-header h2 {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   button#send-btn ion-icon {
@@ -312,17 +315,15 @@ li {
   }
 
   .chat-output {
-    height: 150px;
+    max-height: 50rem;
+    height: 30vw;
   }
 }
 
 @media (max-width: 480px) {
   #chat-popup {
     width: 90%;
-    height: 60%;
     justify-content: center;
-    /* bottom: 0; */
-    /* right: 0; */
     max-width: none;
     padding: 15px;
   }
@@ -342,7 +343,7 @@ li {
   }
 
   .chat-header h2 {
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
 
   button#send-btn ion-icon {
@@ -350,7 +351,7 @@ li {
   }
 
   .chat-output {
-    height: 80vw;
+    height: 60vw;
   }
 }
 
