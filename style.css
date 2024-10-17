@@ -350,7 +350,7 @@ li {
   }
 
   .chat-output {
-    height: 120px;
+    height: 80vw;
   }
 }
 
