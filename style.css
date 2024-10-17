@@ -319,6 +319,7 @@ li {
 @media (max-width: 480px) {
   #chat-popup {
     width: 90%;
+    height: 60%;
     justify-content: center;
     /* bottom: 0; */
     /* right: 0; */
