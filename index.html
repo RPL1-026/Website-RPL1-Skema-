@@ -78,7 +78,30 @@
       </div>
     </div>
 
+    <!-- Icon Chat -->
+    <div id="chat-icon">
+      <ion-icon name="chatbubble-outline"></ion-icon>
+    </div>
+
+    <!-- Chat Popup -->
+    <div id="chat-popup" class="hidden">
+        <div class="chat-container">
+            <div class="chat-header">
+                <h2>Chat</h2>
+            </div>
+            <div id="chat-output" class="chat-output"></div>
+            <div class="chat-input-container">
+                <input type="text" id="name-input" placeholder="Masukkan nama" />
+                <textarea id="message-input" placeholder="Masukkan pesan" rows="3"></textarea>
+                <button id="send-btn">
+                    <ion-icon name="paper-plane-outline"></ion-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- js -->
+    <script type="module" src="js/scripts.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
