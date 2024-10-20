@@ -567,6 +567,33 @@ li {
   line-height: 1.6;
 }
 
+.titlemaps {
+  padding: 0 calc(7% + 1rem);
+  margin-bottom: 0;
+  margin-top: 1rem;
+}
+
+.titlemaps h3 {
+  font-size: 1.8rem;
+  color: var(--text);
+}
+
+.maps {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin-bottom: 2rem;
+  padding: 2rem 7% 1.4rem;
+  width: 100%;
+  height: 46rem;
+}
+
+.maps iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
 /* walisiswa Section */
 #profile-section.profile-background {
   min-height: 100vh;
