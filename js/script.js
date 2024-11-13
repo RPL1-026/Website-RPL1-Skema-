@@ -82,20 +82,6 @@ function closePopup() {
   quotePopup.classList.remove("show");
 }
 
-// function showRandomQuote() {
-//   const randomIndex = Math.floor(Math.random() * quotes.length);
-//   const quoteText = document.getElementById("quoteText");
-//   const quotePopup = document.getElementById("quotePopup");
-
-//   quoteText.textContent = quotes[randomIndex];
-//   quotePopup.classList.add("show");
-// }
-
-// function closePopup() {
-//   const quotePopup = document.getElementById("quotePopup");
-//   quotePopup.classList.remove("show");
-// }
-
 document.querySelectorAll('.navbar .navbar-nav a').forEach(link => {
   if (link.href === window.location.href) {
     link.classList.add('active');
