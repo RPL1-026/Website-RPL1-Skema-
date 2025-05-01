@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>rplone026</title>
-
+    
     <link rel="icon" type="image/ico" href="favicon_io\favicon.ico">
     <link rel="manifest" href="favicon_io\site.webmanifest">
     <!-- font -->
@@ -49,7 +49,7 @@
         <a
           href="https://www.instagram.com/booksrplsatu?igsh=NHdheDl5Zjd3c254"
           target="_blank"
-        >
+          >
           <ion-icon id="instagram-icon" name="logo-instagram"></ion-icon>
         </a>
         <a href="#" id="hamburger-menu">
@@ -59,26 +59,49 @@
     </nav>
     <!-- navbar end -->
 
-    <!-- hero section start-->
-    <section class="hero" id="home">
-      <main class="content">
-        <h1>Selamat Datang di Website <span style="font-style: italic; color: #0db9d7;">RPL1</span></h1>
-        <a href="#" class="button" onclick="showQuote()">Dapatkan Motivasi!</a>
-      </main>
-      <div class="homeimg">
-        <img src="Aset\Home.png" alt="RPL">
+    <!-- KI & Wisata Skema 2025 Content -->
+    <section id="ki-wisata">
+      <h1>KI &amp; Wisata Skema 2025</h1>
+
+      <!-- Loading Overlay -->
+      <div id="loading-overlay" class="hidden">
+        <div class="spinner"></div>
+        <span>Uploading…</span>
+      </div>
+    
+      <!-- Upload Form -->
+      <form id="upload-form">
+        <input
+          type="text"
+          id="uploader-name"
+          placeholder="Nama Anda"
+          required
+        />
+        <input
+          type="file"
+          id="file-input"
+          accept="image/*,video/*"
+          multiple
+          required
+        />
+        <button type="submit">Upload</button>
+      </form>
+    
+      <!-- Gallery Container -->
+      <div id="gallery" class="gallery"></div>
+    
+      <!-- Image Modal for Gallery Preview -->
+      <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <a class="prev">&#10094;</a>
+        <img class="modal-content" id="imgModal" alt="" />
+        <a class="next">&#10095;</a>
+        <div id="caption"></div>
       </div>
     </section>
-    <!-- hero section end-->
 
-    <!-- Motivational Pop-up -->
-    <div id="quotePopup" class="popup">
-      <div class="popup-content">
-        <p id="quoteText"></p>
-        <button class="close-btn" onclick="closePopup()">Tutup</button>
-      </div>
-    </div>
 
+  
     <!-- Icon Chat -->
     <div id="chat-icon">
       <ion-icon name="chatbubble-outline"></ion-icon>
