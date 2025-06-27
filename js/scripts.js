@@ -1,6 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
 import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, doc, collection as colSub, addDoc as addSubDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
-import { getStorage, ref as sRef, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-storage.js";
 import { format } from "https://cdn.jsdelivr.net/npm/date-fns@2.28.0/esm/index.js";
 
 const firebaseConfig = {
@@ -16,15 +15,9 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const storage = getStorage(app);
 
 const chatIcon = document.getElementById('chat-icon');
 const chatPopup = document.getElementById('chat-popup');
-const kiSection = document.getElementById('ki-wisata');
-const uploadForm = document.getElementById('upload-form');
-const fileInput = document.getElementById('file-input');
-const nameInput = document.getElementById('uploader-name');
-const gallery = document.getElementById('gallery');
 
 // Fungsi untuk menampilkan/menyembunyikan chat
 chatIcon.addEventListener('click', () => {
@@ -84,103 +77,3 @@ onSnapshot(q, (querySnapshot) => {
     output += "</ul>";
     chatOutput.innerHTML = output;
 });
-
-// KI & Wisata
-// Handle multiple file uploads
-
-const overlay = document.getElementById('loading-overlay');
-
-uploadForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  overlay.classList.remove('hidden');  // show overlay
-
-  const uploader = nameInput.value.trim() || 'Anonymous';
-  const files = Array.from(fileInput.files);
-  if (!files.length) {
-    overlay.classList.add('hidden');
-    return alert('Pilih file terlebih dahulu!');
-  }
-
-  for (const file of files) {
-    const path = 'uploads/' + Date.now() + '_' + file.name;
-    const ref = sRef(storage, path);
-    try {
-      await uploadBytes(ref, file);
-      const url = await getDownloadURL(ref);
-      await addDoc(collection(db, 'uploads'), {
-        uploader,
-        fileName: file.name,
-        fileURL: url,
-        storagePath: path,
-        timestamp: new Date().toISOString()
-      });
-    } catch (err) {
-      console.error(err);
-    }
-  }
-
-  uploadForm.reset();
-  overlay.classList.add('hidden');  // hide overlay
-});
-
-// Realtime gallery stream
-const uploadsQuery = query(collection(db, 'uploads'), orderBy('timestamp', 'asc'));
-onSnapshot(uploadsQuery, (snapshot) => {
-  gallery.innerHTML = '';
-  snapshot.forEach(docSnap => {
-    const data = docSnap.data();
-    const time = format(new Date(data.timestamp), 'dd MMM yyyy HH:mm');
-
-    // Create gallery item
-    const item = document.createElement('div');
-    item.className = 'gallery-item';
-    item.innerHTML = `
-      <a href="${data.fileURL}" target="_blank">
-        <img src="${data.fileURL}" alt="${data.fileName}" />
-      </a>
-      <div class="meta">
-        <strong>${data.uploader}</strong><br>
-        <small>${time}</small>
-      </div>
-      <div class="actions">
-        <button class="comment-btn" data-id="${docSnap.id}">Komentar</button>
-        <a href="${data.fileURL}" download class="download-btn">Download</a>
-      </div>
-      <div class="comments" id="comments-${docSnap.id}"></div>
-    `;
-    gallery.appendChild(item);
-
-    // Attach comment handler
-    const commentBtn = item.querySelector('.comment-btn');
-    commentBtn.addEventListener('click', () => handleComment(docSnap.id));
-
-    // Load comments
-    renderComments(docSnap.id);
-  });
-});
-
-// Handle comment creation
-async function handleComment(uploadId) {
-  const text = prompt('Tulis komentar Anda:');
-  if (!text) return;
-  try {
-    await addSubDoc(colSub(db, 'uploads', uploadId, 'comments'), {
-      text,
-      timestamp: new Date().toISOString()
-    });
-  } catch (error) {
-    console.error('Comment error:', error);
-  }
-  renderComments(uploadId);
-}
-
-// Render comments under each item
-async function renderComments(uploadId) {
-  const container = document.getElementById(`comments-${uploadId}`);
-  const snaps = await getDocs(colSub(db, 'uploads', uploadId, 'comments'));
-  container.innerHTML = '<ul>' + snaps.docs.map(c => {
-    const d = c.data();
-    const t = format(new Date(d.timestamp), 'dd MMM yyyy HH:mm');
-    return `<li>${d.text} <small>${t}</small></li>`;
-  }).join('') + '</ul>';
-}
