@@ -93,6 +93,11 @@ body {
   color: var(--hover);
 }
 
+#github-icon:hover {
+  transform: scale(1.02);
+  color: var(--hover);
+}
+
 .navbar .navbar-extra a {
   color: var(--text);
   margin: 0 0.5rem;
@@ -111,7 +116,11 @@ body {
 .navbar .navbar-extra a:hover {
   color: var(--hover);
   transform: scale(1.025);
-  transition: transform 0.3s ease, color 0.3s ease; /* Tambahkan transisi untuk semua ikon */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.navbar .navbar-extra a:hover .bx {
+  color: var(--hover);
 }
 
 .navbar .navbar-nav a.active {
@@ -257,12 +266,12 @@ body {
   transform: scale(1.04);
 }
 
-#chat-icon ion-icon {
+#chat-icon .bx {
   font-size: 30px;
   color: #fff;
 }
 
-#chat-icon ion-icon:hover {
+#chat-icon .bx:hover {
   color: var(--hover);
 }
 
@@ -356,14 +365,14 @@ button#send-btn {
   align-items: center;
 }
 
-button#send-btn ion-icon {
+button#send-btn .bx {
   margin-top: 10px;
   font-size: 26px;
   color: #fff;
   transition: transform 0.3s ease;
 }
 
-button#send-btn ion-icon:hover {
+button#send-btn .bx:hover {
   transform: scale(1.08);
   color: var(--hover);
 }
@@ -411,7 +420,7 @@ li {
     padding: 10px;
   }
 
-  #chat-icon ion-icon {
+  #chat-icon .bx {
     font-size: 25px;
   }
 
@@ -423,7 +432,7 @@ li {
     font-size: 1.6rem;
   }
 
-  button#send-btn ion-icon {
+  button#send-btn .bx {
     font-size: 22px;
   }
 
@@ -447,7 +456,7 @@ li {
     padding: 8px;
   }
 
-  #chat-icon ion-icon {
+  #chat-icon .bx {
     font-size: 22px;
   }
 
@@ -459,7 +468,7 @@ li {
     font-size: 1.4rem;
   }
 
-  button#send-btn ion-icon {
+  button#send-btn .bx {
     font-size: 20px;
   }
 
@@ -1042,9 +1051,15 @@ h2 span {
 }
 
 /* Icon styles */
-.ion-icon {
+.bx {
   font-size: var(--icon-size); /* Konsistensi ukuran ikon */
   color: var(--text); /* Konsistensi warna ikon */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Icon hover in details section (student cards) */
+.details a:hover .bx {
+  color: var(--hover);
 }
 
 /* Responsive adjustments for mobile */

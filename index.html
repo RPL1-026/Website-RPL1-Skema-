@@ -1,114 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>rplone026</title>
 
-    <link rel="icon" type="image/ico" href="favicon_io\favicon.ico">
-    <link rel="manifest" href="favicon_io\site.webmanifest">
-    <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rplone026</title>
 
-    <!-- Ionicons -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
+  <link rel="icon" type="image/ico" href="favicon_io\favicon.ico">
+  <link rel="manifest" href="favicon_io\site.webmanifest">
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+    rel="stylesheet" />
 
-    <!-- css -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- navbar start-->
-    <nav class="navbar">
-      <a href="#" class="navbar-logo">RPL<span>1</span>.</a>
-      <div class="navbar-nav">
-        <a href="index.html">Beranda</a>
-        <a href="aboute.html">Tentang Kami</a>
-        <a href="walisiswa.html">Wali & Siswa</a>
-        <a href="gallery.html">Galeri Kelas</a>
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+  <!-- css -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- navbar start-->
+  <nav class="navbar">
+    <a href="#" class="navbar-logo">RPL<span>1</span>.</a>
+    <div class="navbar-nav">
+      <a href="index.html">Beranda</a>
+      <a href="aboute.html">Tentang Kami</a>
+      <a href="walisiswa.html">Wali & Siswa</a>
+      <a href="gallery.html">Galeri Kelas</a>
+    </div>
+    <div class="navbar-extra">
+      <a href="https://www.tiktok.com/@booksrpl1/" target="_blank">
+        <i class="bx bxl-tiktok" id="tiktok-icon"></i>
+      </a>
+      <a href="https://www.instagram.com/booksrplsatu/" target="_blank">
+        <i class="bx bxl-instagram" id="instagram-icon"></i>
+      </a>
+      <a href="https://open.spotify.com/playlist/5hYpIINv6GzYWjJIUMpmZm?si=mTjUb_99TISzrOZE-AYGxw" target="_blank">
+        <i class="bx bxl-spotify" id="spotify-icon"></i>
+      </a>
+      <a href="https://github.com/RPL1-026/" target="_blank">
+        <i class="bx bxl-github" id="github-icon"></i>
+      </a>
+      <a href="#" id="hamburger-menu">
+        <i class="bx bx-menu"></i>
+      </a>
+    </div>
+  </nav>
+  <!-- navbar end -->
+
+  <!-- hero section start-->
+  <section class="hero" id="home">
+    <main class="content">
+      <h1>Selamat Datang di Website <span style="font-style: italic; color: #0db9d7;">RPL1</span></h1>
+      <a href="#" class="button" onclick="showQuote()">Dapatkan Motivasi!</a>
+    </main>
+    <div class="homeimg">
+      <img src="Aset\Home.png" alt="RPL">
+    </div>
+  </section>
+  <!-- hero section end-->
+
+  <!-- Motivational Pop-up -->
+  <div id="quotePopup" class="popup">
+    <div class="popup-content">
+      <p id="quoteText"></p>
+      <button class="close-btn" onclick="closePopup()">Tutup</button>
+    </div>
+  </div>
+
+  <!-- Icon Chat -->
+  <div id="chat-icon">
+    <i class="bx bx-chat"></i>
+  </div>
+
+  <!-- Chat Popup -->
+  <div id="chat-popup" class="hidden">
+    <div class="chat-container">
+      <div class="chat-header">
+        <h2>Chat</h2>
       </div>
-      <div class="navbar-extra">
-        <a
-          href="https://www.tiktok.com/@booksrpl1/"
-          target="_blank"
-        >
-          <ion-icon id="tiktok-icon" name="logo-tiktok"></ion-icon>
-        </a>
-        <a
-          href="https://www.instagram.com/booksrplsatu/"
-          target="_blank"
-        >
-          <ion-icon id="instagram-icon" name="logo-instagram"></ion-icon>
-        </a>
-        <a
-          href="https://github.com/RPL1-026/"
-          target="_blank"
-        >
-          <ion-icon id="github-icon" name="logo-github"></ion-icon>
-        </a>
-        <a href="#" id="hamburger-menu">
-          <ion-icon name="menu-outline"></ion-icon>
-        </a>
-      </div>
-    </nav>
-    <!-- navbar end -->
-
-    <!-- hero section start-->
-    <section class="hero" id="home">
-      <main class="content">
-        <h1>Selamat Datang di Website <span style="font-style: italic; color: #0db9d7;">RPL1</span></h1>
-        <a href="#" class="button" onclick="showQuote()">Dapatkan Motivasi!</a>
-      </main>
-      <div class="homeimg">
-        <img src="Aset\Home.png" alt="RPL">
-      </div>
-    </section>
-    <!-- hero section end-->
-
-    <!-- Motivational Pop-up -->
-    <div id="quotePopup" class="popup">
-      <div class="popup-content">
-        <p id="quoteText"></p>
-        <button class="close-btn" onclick="closePopup()">Tutup</button>
+      <div id="chat-output" class="chat-output"></div>
+      <div class="chat-input-container">
+        <input type="text" id="name-input" placeholder="Masukkan nama" />
+        <textarea id="message-input" placeholder="Masukkan pesan" rows="3"></textarea>
+        <button id="send-btn">
+          <i class="bx bx-send"></i>
+        </button>
       </div>
     </div>
+  </div>
 
-    <!-- Icon Chat -->
-    <div id="chat-icon">
-      <ion-icon name="chatbubble-outline"></ion-icon>
-    </div>
+  <!-- js -->
+  <script type="module" src="js/scripts.js"></script>
+  <script src="js/script.js"></script>
+</body>
 
-    <!-- Chat Popup -->
-    <div id="chat-popup" class="hidden">
-        <div class="chat-container">
-            <div class="chat-header">
-                <h2>Chat</h2>
-            </div>
-            <div id="chat-output" class="chat-output"></div>
-            <div class="chat-input-container">
-                <input type="text" id="name-input" placeholder="Masukkan nama" />
-                <textarea id="message-input" placeholder="Masukkan pesan" rows="3"></textarea>
-                <button id="send-btn">
-                    <ion-icon name="paper-plane-outline"></ion-icon>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- js -->
-    <script type="module" src="js/scripts.js"></script>
-    <script src="js/script.js"></script>
-  </body>
 </html>
-

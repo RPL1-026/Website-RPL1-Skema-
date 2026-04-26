@@ -1,987 +1,854 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Struktur Kelas</title>
 
-    <link rel="icon" type="image/ico" href="favicon_io\favicon.ico" />
-    <link rel="manifest" href="favicon_io\site.webmanifest" />
-    <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Struktur Kelas</title>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.4/collection/components/icon/icon.min.css"
-    />
-    <!-- css -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- navbar start-->
-    <nav class="navbar">
-      <a href="#" class="navbar-logo">RPL<span>1</span>.</a>
-      <div class="navbar-nav">
-        <a href="index.html">Beranda</a>
-        <a href="aboute.html">Tentang Kami</a>
-        <a href="walisiswa.html">Wali & Siswa</a>
-        <a href="gallery.html">Galeri Kelas</a>
-      </div>
-      <div class="navbar-extra">
-        <a
-          href="https://www.tiktok.com/@booksrpl1/"
-          target="_blank"
-        >
-          <ion-icon id="tiktok-icon" name="logo-tiktok"></ion-icon>
-        </a>
-        <a
-          href="https://www.instagram.com/booksrplsatu/"
-          target="_blank"
-        >
-          <ion-icon id="instagram-icon" name="logo-instagram"></ion-icon>
-        </a>
-        <a
-          href="https://github.com/RPL1-026/"
-          target="_blank"
-        >
-          <ion-icon id="github-icon" name="logo-github"></ion-icon>
-        </a>
-        <a href="#" id="hamburger-menu">
-          <ion-icon name="menu-outline"></ion-icon>
-        </a>
-      </div>
-    </nav>
-    <!-- navbar end -->
+  <link rel="icon" type="image/ico" href="favicon_io\favicon.ico" />
+  <link rel="manifest" href="favicon_io\site.webmanifest" />
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+    rel="stylesheet" />
 
-    <!-- profile section start -->
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <!-- css -->
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <section id="profile-section" class="profile-background">
-      <!-- Modal Structure -->
-      <div id="details-modal" class="modal">
-        <div class="modal-content card-style">
-          <!-- <span class="close-btn" onclick="closeModal()">&times;</span> -->
-          <div id="modal-details">
-            <!-- Di sini akan muncul gambar profil dan detail informasi -->
-          </div>
+<body>
+  <!-- navbar start-->
+  <nav class="navbar">
+    <a href="#" class="navbar-logo">RPL<span>1</span>.</a>
+    <div class="navbar-nav">
+      <a href="index.html">Beranda</a>
+      <a href="aboute.html">Tentang Kami</a>
+      <a href="walisiswa.html">Wali & Siswa</a>
+      <a href="gallery.html">Galeri Kelas</a>
+    </div>
+    <div class="navbar-extra">
+      <a href="https://www.tiktok.com/@booksrpl1/" target="_blank">
+        <i class="bx bxl-tiktok" id="tiktok-icon"></i>
+      </a>
+      <a href="https://www.instagram.com/booksrplsatu/" target="_blank">
+        <i class="bx bxl-instagram" id="instagram-icon"></i>
+      </a>
+      <a href="https://open.spotify.com/playlist/5hYpIINv6GzYWjJIUMpmZm?si=mTjUb_99TISzrOZE-AYGxw" target="_blank">
+        <i class="bx bxl-spotify" id="spotify-icon"></i>
+      </a>
+      <a href="https://github.com/RPL1-026/" target="_blank">
+        <i class="bx bxl-github" id="github-icon"></i>
+      </a>
+      <a href="#" id="hamburger-menu">
+        <i class="bx bx-menu"></i>
+      </a>
+    </div>
+  </nav>
+  <!-- navbar end -->
+
+  <!-- profile section start -->
+
+  <section id="profile-section" class="profile-background">
+    <!-- Modal Structure -->
+    <div id="details-modal" class="modal">
+      <div class="modal-content card-style">
+        <!-- <span class="close-btn" onclick="closeModal()">&times;</span> -->
+        <div id="modal-details">
+          <!-- Di sini akan muncul gambar profil dan detail informasi -->
         </div>
       </div>
+    </div>
 
-      <h2>Wali <span>&</span> Siswa</h2>
+    <h2>Wali <span>&</span> Siswa</h2>
 
-      <!-- Wali Kelas -->
-      <div class="card teacher-card" onclick="toggleDetails(this)">
-        <img
-          src="https://lh3.googleusercontent.com/pw/AP1GczM6Zdb0LwnebsJ3u26nAiKKJ51E-7iXRbnntamEmJA5NZk3VKc1Jc1nUxjx0QuRZI2QKV01WA5VCNdt9TpkE4PdLQQpBANwhtx2dXNewswGrQe6NyEmEpwjH7IvdIFgLTRNGgiSottgTAqP9xi_QjE=w445-h445-s-no-gm?authuser=0"
-          alt="Siti Mahmudah"
-          class="profile-pic"
-        />
-        <h3>Siti Mahmudah, M.Kom</h3>
-        <p>Wali Kelas</p>
-<!--         <div class="details">
+    <!-- Wali Kelas -->
+    <div class="card teacher-card" onclick="toggleDetails(this)">
+      <img
+        src="https://lh3.googleusercontent.com/pw/AP1GczM6Zdb0LwnebsJ3u26nAiKKJ51E-7iXRbnntamEmJA5NZk3VKc1Jc1nUxjx0QuRZI2QKV01WA5VCNdt9TpkE4PdLQQpBANwhtx2dXNewswGrQe6NyEmEpwjH7IvdIFgLTRNGgiSottgTAqP9xi_QjE=w445-h445-s-no-gm?authuser=0"
+        alt="Siti Mahmudah" class="profile-pic" />
+      <h3>Siti Mahmudah, M.Kom</h3>
+      <p>Wali Kelas</p>
+      <!--         <div class="details">
           <p><strong>Tempat Tinggal:</strong> Alamat Wali Kelas</p>
           <p><strong>Tanggal Lahir:</strong> 1 Januari 1980</p>
           <p><strong>Hobi:</strong> Membaca, Berkebun</p>
         </div> -->
-      </div>
-
-      <!-- Murid-Murid -->
-      <div class="student-cards">
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)" style="filter: saturate(0);">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczPdd0XGhwSx1RaGj0i3qsxvIDiwBxvBtgqGi0sMYafLSxdvfU1vJCGw8WG06qw5BZP8De-Px6JBlHwiGhmNo_PSCM3o-11BNQ8nEDxKxlalOZ_8FGU23AKR5QMAw7jJQlmaC99afpY27Gd4c2uLT6d-=w716-h715-s-no-gm?authuser=0"
-            alt="Abel"
-            class="profile-pic"
-          />
-          <h3>Abel Nova Azzahrah</h3>
-          <div class="details">
-            <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 14 November 2007</p>
-            <p><strong>Jenis Kelamin :</strong> Laki-laki</p>
-            <p><strong>Agama :</strong> Islam</p>
-            <p><strong>Alamat :</strong> Pesaran RT 2 RW 2 Pesaren Sukorejo Kendal</p>
-            <a href="https://photos.app.goo.gl/Y4enYDcgm5hxCXHn8" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczMGdFqqSp0zW7yPV9cEApWATuMveUPyFgKhxPH4mWeNIcLlTRIUzf18LqxfUYtDbODoNtIaT9KURxrxQaDXpxAJyCNFiDVBA4WZ4wuUgCeLt4HKJu1VS_HDK8LV_XgTDigs5N3prkJB-KWES3FheMvu=w634-h633-s-no-gm?authuser=0"
-            alt="Bunga"
-            class="profile-pic"
-          />
-          <h3>Adelia Bunga Febrianti</h3>
-          <div class="details">
-            <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 24 Februari 2009</p>
-            <p><strong>Jenis Kelamin :</strong> Perempuan</p>
-            <p><strong>Agama :</strong> Islam</p>
-            <p><strong>Alamat :</strong> Kalidamar RT 3 RW 1 Damarjati Sukorejo Kendal</p>
-            <a href="https://photos.app.goo.gl/nzzsTZBA4WKUtxi79" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczNhWWURrpzvKu9NqjqfBxKTeaJr4pRe370TJxthqrHNEuJdMIenyB_GBueh7BHelZEVBA9w2uFysToxuMJvnjL7W1EfZ9M22pLL6f94MWfy9GUnGPUXiuTQ9qtzFM21yq7hKNRoHNPEY-wopybdUg6F=w633-h633-s-no-gm?authuser=0"
-            alt="Alif"
-            class="profile-pic"
-          />
-          <h3>Alif Alfan</h3>
-          <div class="details">
-            <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 01 Desember 2007</p>
-            <p><strong>Jenis Kelamin :</strong> Laki-laki</p>
-            <p><strong>Agama :</strong> Islam</p>
-            <p><strong>Alamat :</strong> Jl Gondoriyo RT 3 RW 1 Gondoharum Pageruyung Kendal</p>
-            <a href="https://photos.app.goo.gl/CFXfoEySiFi7czqu5" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczNlmN-jREWr8APubKOZ5PA076AfciGvACbMZXIa6LOZ2_CvU-4Jgd29Ux_gViPbSotA6lwu2TJObtrKG6BRdDrIyHivkOTfUUUNANZ6WPMt5JPdjfw6otgNeynmnaQSqtpO5bii1WEN4UmgnvdcDA17=w633-h633-s-no-gm?authuser=0"
-            alt="Annisa"
-            class="profile-pic"
-          />
-          <h3>Annisa Nur Fadlilah</h3>
-          <div class="details">
-            <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 16 Juli 2008</p>
-            <p><strong>Jenis Kelamin :</strong> Perempuan</p>
-            <p><strong>Agama :</strong> Islam</p>
-            <p><strong>Alamat :</strong> Parakan RT 12 RW 2 Manggungmangu Plantungan Kendal</p>
-            <a href="https://photos.app.goo.gl/RcGX6GbE2F1mVbz89" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczPZCnTYXp7Zh2hx8wXnd-I4Pd2NBFmqpL3PemaZoFz1hR-8xUqG_za-YPRG9LwcN0xOx-6ongQcjiDk0_PzEmWLYmobuWoGnmsRNONW7EfGrFl8i0_Mo4EGxenqkbnR3BQRDmC6RnjxDSrDMkmLSHni=w633-h633-s-no-gm?authuser=0"
-            alt="Aulia"
-            class="profile-pic"
-          />
-          <h3>Aulia Arin Maftuckah</h3>
-          <div class="details">
-            <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 07 Agustus 2008</p>
-            <p><strong>Jenis Kelamin :</strong> Perempuan</p>
-            <p><strong>Agama :</strong> Islam</p>
-            <p><strong>Alamat :</strong> Cepit Kulon RT 1 RW 3 Pageruyung Pageruyung Kendal</p>
-            <a href="https://photos.app.goo.gl/U9pLCTSY9E3PKbk4A" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczMbr5S1Y7KTj4YfcBj97jF6rsmADU27Oaf7a2QoveY053_GOwciT8bQNfaFyaq4vQHlAWbDcNWjccWlW-bAd7Rb9mriBGXibsf6Xc1776_rYvRTVtrzzhrVy49UtQcsPTK-bhnz-BIWt9qxFZVlZZCs=w633-h633-s-no-gm?authuser=0"
-            alt="Brillian"
-            class="profile-pic"
-          />
-          <h3>Brillian Yusuf Sejati</h3>
-          <div class="details">
-            <p><strong>Alamat :</strong> Bumiayu, Weleri</p>
-            <p><strong>Tanggal Lahir :</strong> 10 Oktober 2007</p>
-            <p><strong>Asal/Suku :</strong> Jawa</p>
-            <p>
-              <strong>My Wife :</strong> Short hair with glasses and
-              flat
-            </p>
-            <a href="https://www.instagram.com/bys.2007/" target="_blank">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-            <a href="https://www.tiktok.com/@bys2007" target="_blank">
-              <ion-icon name="logo-tiktok"></ion-icon>
-            </a>
-            <a href="https://photos.app.goo.gl/BDAHtf1aEPW6Ukyi6" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczObWYfyEvWEdjJKp3WsHuvy4MoeSQhhS8yxkhbI54FKeC_GqaD_ZvJWOR0ETBA_7xHIwfSwHprc5MmGPfCBUXRaL4FyZqhl5tIbzJZE9OokOgqVdf-ZnRt6pr8JeA88bOYQMusI3JeE-T_lMLx3HkQP=w475-h633-s-no-gm?authuser=0"
-            alt="Dian"
-            class="profile-pic"
-          />
-          <h3>Dian Putri Kartikasari</h3>
-          <div class="details">
-            <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 17 September 2008</p>
-            <p><strong>Jenis Kelamin :</strong> Perempuan</p>
-            <p><strong>Agama :</strong> Islam</p>
-            <p><strong>Alamat :</strong> Tejorejo RT 4 RW 6 Tejorejo Ringinarum Kendal</p>
-            <a href="https://photos.app.goo.gl/MxksHaPTc4iVXAhZ6" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczNS1V3tF38LCZDxdY7cnA8zt-dTQ_Aba08_2P4cfhso9U5ddr3ryPdq1ZgbBmTY4aswkWvxQEhdOBj-4jeYBGyzf2G0FxJxOVuS90kP2s7cf1KKtK7CnEfzcn4cxF9VMVQpwwjJOn8-Xo1uvMeoi9Hf=w913-h913-s-no-gm?authuser=0"
-            alt="Dimar"
-            class="profile-pic"
-          />
-          <h3>Dimar Nur Arifin</h3>
-          <div class="details">
-            <p><strong>Serial/Film favorit :</strong> A Silent Voice</p>
-            <p><strong>Hobi :</strong> Menonton Anime</p>
-            <p><strong>Genre Hidup :</strong> Horror</p>
-            <p>
-              <strong>Kepribadian :</strong> Dingin, Tenang, Sadis,
-              Manipulasi.(Kek Johan Liebert😈😈)
-            </p>
-            <a
-              href="https://www.instagram.com/dimar.na?igsh=cDgyeW9qbWFtcHFi"
-              target="_blank"
-            >
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-            <a
-              href="https://www.tiktok.com/@babyy_nuts?_t=8pUNnnyY3FK&_r=1"
-              target="_blank"
-            >
-              <ion-icon name="logo-tiktok"></ion-icon>
-            </a>
-            <a href="https://photos.app.goo.gl/RWy8v31rqUQUtAo18" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczPw7RSuqIpZYiAbBnsLJjQ0_Ds2T9eYhiiu61P1ECxKwUsKOOReAu6hIqkQl3bAhK3qRIpSCAlSzg635QhS5JorAOHK_Y_YAMEj8nM3_XDEZweCPeWkKnuZsU6Selq5FTBTztrEGtRa-Xj2Tb6j7aik=w633-h633-s-no-gm?authuser=0"
-            alt="Dinda"
-            class="profile-pic"
-          />
-          <h3>Dinda Puspita Ayuningtyas</h3>
-          <div class="details">
-            <p><strong>Tempat Tanggal Lahir :</strong> Candipura, 22 Juni 2008</p>
-            <p><strong>Jenis Kelamin :</strong> Perempuan</p>
-            <p><strong>Agama :</strong> Islam</p>
-            <p><strong>Alamat :</strong> Gondoharum RT 1 RW 2 Gondoharum Pageruyung Kendal</p>
-            <a href="https://photos.app.goo.gl/2gMB26UKMyLC5kVr7" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczOpcN8uI7kz-P6GHvvSYfd-9x9C3m_GxIwppJUSPTpGk5e0PW8AyD59XsUPq-2Y8fVKxOd2WR23WK59gnZWCeuOAJx6ATfF2s956kqjxPHombF36B7xzmFJdOpDi600uHPj-3o19EjVPte5bDNMVJOH=w576-h576-s-no-gm?authuser=0"
-            alt="Eleen"
-            class="profile-pic"
-          />
-          <h3>Eleen Aulia Nafisa</h3>
-          <div class="details">
-            <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 12 Maret 2008</p>
-            <p><strong>Jenis Kelamin :</strong> Perempuan</p>
-            <p><strong>Agama :</strong> Islam</p>
-            <p><strong>Alamat :</strong> Bogosari RT 4 RW 1 Tambahrejo Pageruyung Kendal</p>
-            <a href="https://photos.app.goo.gl/JCQq64okd2YaPt6X7" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczOxhNRZKQAOpm0CDg66-_rAaSjwYVSWwQc5BeJLKmD_CtKDs-_QUn1fYT7Jcax_PkLvuDStqX0XTJ9F8I4jAQbCyq5vYE94E31PLsWgfNX3CJ0q5v8X4MlaE9Roh99eV41h_pJTHUS6Zsw8r6dtdIey=w633-h633-s-no-gm?authuser=0"
-            alt="Enggar"
-            class="profile-pic"
-          />
-          <h3>Enggar Widyaningrum</h3>
-          <div class="details">
-            <p><strong>Alamat :</strong> patean</p>
-            <p><strong>Tanggal Lahir :</strong> 1 november 2008</p>
-            <p><strong>Suami :</strong> jeong jaehyun</p>
-            <p><strong>Cita-cita :</strong> mau beli iyunggg iyunggg</p>
-            <a
-              href="https://www.instagram.com/tira.misul0vee?igsh=bjFhZ3BxZDlmZno1"
-              target="_blank"
-            >
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-            <a href="https://photos.app.goo.gl/iGvm1NdFYE6MjR3W7" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczO5G4OydLX5zfsjAO1Houe8WIUnSruNLm0sI29x7oz0nGMEvmrMd8HTWrhFQ2rs1uVqNbO_dbopYP_royB413trY1lI-cB8ZkVNyfrkkXwf3SbeApSSJdG2muZ_Qh5d_yRAwNYA_9gwaWJ3he8yrWDI=w633-h633-s-no-gm?authuser=0"
-            alt="Erlita"
-            class="profile-pic"
-          />
-          <h3>Erlita Deva Agustina</h3>
-          <div class="details">
-            <p><strong>Alamat :</strong> Mranggen</p>
-            <p><strong>Tanggal Lahir :</strong> 20 Agustus</p>
-            <p><strong>Kesukaan :</strong> suka film hororrr aw</p>
-            <p><strong>Status :</strong> punya cwo</p>
-            <a
-              href="https://www.instagram.com/liitaawww?igsh=MWVwdnA3dnlzNXdzcQ=="
-              target="_blank"
-            >
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-            <a
-              href="https://www.tiktok.com/@lliiiittaaa?_t=8pmqafnlua2&_r=1"
-              target="_blank"
-            >
-              <ion-icon name="logo-tiktok"></ion-icon>
-            </a>
-            <a href="https://photos.app.goo.gl/gwPuZcL1ZpVQdYp76" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczMBJlD0O7_Qx5umAyII4sbGvUkMfR8uu3_KK3q_Fauci3V5wFHcLYUvUBRhU3tsmvQfjFmX2wFsXGSzDksYR0czaqwzfazg6Vq29rPktwgJfKKzJqgZ6zdgZYdU56uZY-g9NY2bHXmOz058_bNxu29K=w634-h633-s-no-gm?authuser=0"
-            alt="Faris"
-            class="profile-pic"
-          />
-          <h3>Faris Elfrida Hadriyansyah</h3>
-          <div class="details">
-            <p><strong>Alamat :</strong> Plantungan, Kendal</p>
-            <p><strong>Agama :</strong> Islam</p>
-            <p><strong>Hobi :</strong> Membaca</p>
-            <p>
-              <strong>Kata² :</strong> "Sesuatu yang indah tidak diraih dengan
-              mudah"
-            </p>
-            <a
-              href="https://www.instagram.com/farisell_?igsh=bDZrcTc5bmV0Ymkx"
-              target="_blank"
-            >
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-            <a
-              href="https://www.tiktok.com/@fariisell?_t=8pkNYQM2MIz&_r=1"
-              target="_blank"
-            >
-              <ion-icon name="logo-tiktok"></ion-icon>
-            </a>
-            <a href="https://photos.app.goo.gl/CUjgYqHvXr9vpDh37" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczPvZd7l5Nk0jpFj2LWhvH5mFVEB-PE2zeWUDjEYBGkBvHUzPsD0k6JX_HS8ZaXl_XIihJUtNqRBTlhDxYeylmtkiMQjnH_FEhePjiTlI8Groxd8bEoxUkKpEZVhRJekGeLDrA8Tr-b6Y0ey9Fjlccb6=w633-h633-s-no-gm?authuser=0"
-            alt="Ferlyana"
-            class="profile-pic"
-          />
-          <h3>Ferlyana Glady Savila</h3>
-          <div class="details">
-            <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 05 Februari 2008</p>
-            <p><strong>Jenis Kelamin :</strong> Perempuan</p>
-            <p><strong>Agama :</strong> Islam</p>
-            <p><strong>Alamat :</strong> Bogosari RT 4 RW 1 Tambahrejo Pageruyung Kendal</p>
-            <a href="https://photos.app.goo.gl/aaq3Trm7qUSZXFcE9" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczN6A3mx1bMiOyvaE5Ycb5mHY84ugqqmzh3R3N_Tu9hJlVqWaK4hjIFdtg_8d62v46oJxYaSwT1Wr9jp8DDhDkg6hb9gDyYl3VnhtFSmXEZQOV-Eb_MQPkrtLB2otms3lM8J1N4XrQc2w3D9nx4qi8MB=w606-h606-s-no-gm?authuser=0"
-            alt="Ghofur"
-            class="profile-pic"
-          />
-          <h3>Ghofur Reza Ananta</h3>
-          <div class="details">
-            <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 27 November 2008</p>
-            <p><strong>Jenis Kelamin :</strong> Laki-laki</p>
-            <p><strong>Agama :</strong> Islam</p>
-            <p><strong>Alamat :</strong> Randusari RT 8 RW 4 Kalibareng Patean Kendal</p>
-            <a
-              href="https://www.tiktok.com/@rezy_445?_t=8pUN4Pl4e99&_r=1"
-              target="_blank"
-            >
-              <ion-icon name="logo-tiktok"></ion-icon>
-            </a>
-            <a href="https://photos.app.goo.gl/ESDi9nQFgCMv8fe76" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczPMpSXASvpAKwqFqoLcL_ShSAIpsCIpvHBGiO-gH3Q2MNx6brBlUQE58mOPFTyBm5_4ojkXNFxbYKXM_pAIwr0sYj6uaprSfuUxLqCIEN6gqOP8OSrhEx7O-TSQuXYg3CIvJOKIK0V-ZISzOO6wVpvt=w633-h633-s-no-gm?authuser=0" alt="Intan" class="profile-pic" />
-          <h3>Intan Cahaya Salsabila</h3>
-          <div class="details">
-            <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 08 April 2008</p>
-            <p><strong>Jenis Kelamin :</strong> Perempuan</p>
-            <p><strong>Agama :</strong> Islam</p>
-            <p><strong>Alamat :</strong> Wonosido RT 2 RW 3 Mlatiharjo Patean Kendal</p>
-            <a href="https://photos.app.goo.gl/dFLGHxRsWmwLV8j89" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczPj72gVy7PdP974QSy9lANLM6mwbzsGSENp5nMkNsZ3nXCdU3oUr5fSTpLM_OPZTRpH0AxN8cFjiRWhpizrTn3mM5c-tLYRzOToP-SXUMBHxlDeUEUbzaoE2s1C1rV4eVjwqvu81_ghv-1CYV14w8W6=w633-h633-s-no-gm?authuser=0"
-            alt="Intan Melisa"
-            class="profile-pic"
-          />
-          <h3>Intan Melisa Nur Aeni</h3>
-          <div class="details">
-            <p><strong>Alamat :</strong> Krajan, Pagergunung pridee</p>
-            <p><strong>Tanggal Lahir :</strong> 5 April</p>
-            <p><strong>Cita-cita :</strong> marga "kageyama"</p>
-            <p><strong>Kata² :</strong> "kapan kita kya dlu lagi"</p>
-            <a href="https://www.Instagram.com/i.lisacc" target="_blank">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-            <a href="https://www.tiktok.com/@int4nime._" target="_blank">
-              <ion-icon name="logo-tiktok"></ion-icon>
-            </a>
-            <a href="https://photos.app.goo.gl/nKuii24BsYptLDpy8" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczM59BnO3JyTuAy8xaIJ4S0Jn1TjTUD-HzmHjotm4_s-zNYcll-Vv-_nvzP5qBaiQG-8oeUg-33qNKV8tst6Syr2Wa1nt71LM140cZ997kILr4UkKKjllFu0r0OVtquJMiYvI53s5tOEWMuKDrV0NN2t=w633-h633-s-no-gm?authuser=0"
-            alt="Jasmine"
-            class="profile-pic"
-          />
-          <h3>Jasmine Nurmaulidha</h3>
-          <div class="details">
-            <p>
-              <strong>Panggilan :</strong> hallo aku jasmin tapi sering di
-              panggil mimin atau mine
-            </p>
-            <p>
-              <strong>Alamat :</strong> alamat ku bogosari tambahrejo pageruyung
-              kendal
-            </p>
-            <p>
-              <strong>Tanggal Lahir :</strong> aku lahir 14 april 2008 di kendal
-              yaaa
-            </p>
-            <p>
-              <strong>Kesukaan :</strong> emm aku suka voli,karna karo suka kmu
-              banyak sainganya
-            </p>
-            <a
-              href="https://www.instagram.com/jsmn.xzy_?igsh=NXRlNnZrMG80Z3Jt"
-              target="_blank"
-            >
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-            <a
-              href="https://www.tiktok.com/@j.z_04?_t=8pZQRqJQADc&_r=1"
-              target="_blank"
-            >
-              <ion-icon name="logo-tiktok"></ion-icon>
-            </a>
-            <a
-              href="https://www.instagram.com/mine_teaaa?igsh=MTdlb21jMms1NTNwdw=="
-              target="_blank"
-            >
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-            <a href="https://photos.app.goo.gl/7UJ7Gjkm1XkpXTPq7" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczOeGift-AOnMSOg8i1y2ZZcC1AxMBZeWoNebgyDzC12DxyXhSP_A7MaQvjB-O-ZUbURz1-pshB7syV1Gz11KDe06-Q3sFolbehIx3TCUhp880XtZqQSd4YMuDP6dZTNn_dRbCsHLAtrb5TPyosDQQWS=w633-h633-s-no-gm?authuser=0"
-            alt="Jazilla"
-            class="profile-pic"
-          />
-          <h3>Jazila Maftukha</h3>
-          <div class="details">
-            <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 14 Maret 2008</p>
-            <p><strong>Jenis Kelamin :</strong> Perempuan</p>
-            <p><strong>Agama :</strong> Islam</p>
-            <p><strong>Alamat :</strong> Widoro RT 3 RW 5 Bangunsari Pageruyung Kendal</p>
-            <a href="https://photos.app.goo.gl/3VnwJbN6LsVXymvT7" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczN_zKFPDHoFemsFu3i95i9q-DF8H9sSRLMOvBduW2cs-3nUTXf3KbPy6d-sBIOIm_ajUE9yqPXbwqKOrIsF0orT_gG28l63mSNMPcbFk78jtVnFFimfFKXxEiBEw09ZTTEFdJPUDLP2u6fmY1eYs2JQ=w633-h633-s-no-gm?authuser=0" alt="Kayla" class="profile-pic" />
-          <h3>Kayla Nazwa Eliza</h3>
-          <div class="details">
-            <p><strong>Alamat :</strong> Kendal</p>
-            <p><strong>Tanggal Lahir :</strong> 9 Januari 2008</p>
-            <p><strong>Golongan Darah :</strong> B</p>
-            <p><strong>Cita-cita :</strong> jadi orang kaya</p>
-            <a
-              href="https://www.instagram.com/keynazae_?igsh=MWJqazV1MjFwNWd0bQ=="
-              target="_blank"
-            >
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-            <a
-              href="https://www.tiktok.com/@kelannay?_t=8pp30FhrwlM&_r=1"
-              target="_blank"
-            >
-              <ion-icon name="logo-tiktok"></ion-icon>
-            </a>
-            <a href="https://photos.app.goo.gl/MRe2jcx7ZeKp7Mdh6" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczOM0MbSZZ1gWo91WoTgrFgUmvJMQ9NkCaOM8fRy2Vjmm_DwAMFWcJevXJ4cY3cDNFoDbMwofx7Y4UGgzMG2fSyMHa5WOCTgR_mOOsW9Tlh9Nhj_N3AlaJfeNmiLq-F7B_mcDiYT3W63B7mwhu1ZyvqQ=w633-h633-s-no-gm?authuser=0"
-            alt="Kharisma"
-            class="profile-pic"
-          />
-          <h3>Kharisma Aulia Faigrima</h3>
-          <div class="details">
-            <p><strong>Alamat :</strong> Sempulawa, Surokonto Wetan</p>
-            <p><strong>Tanggal Lahir :</strong> 4 Januari 2009</p>
-            <p><strong>Keadaan :</strong> lagii galauuu</p>
-            <p><strong>Cita-cita :</strong> menjadiii pengusaha sukses🤙</p>
-            <a href="https://www.instagram.com/kharismaauliaaaa_?igsh=bThsYzF6aDh4dWFi" target="_blank">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-            <a href="https://www.tiktok.com/@kharismaaulia0?_t=8px82bbX7eJ&_r=1" target="_blank">
-              <ion-icon name="logo-tiktok"></ion-icon>
-            </a>
-            <a href="https://photos.app.goo.gl/Dgrd8dFBzCq4u9Uk8" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczPm2UN50m-tcWhJemGOGMdXzQKKAHbiS-UO-V8f0SgcDFBHjgtEJtQtxLVzyE3WJURAiT0g-PIjXNiPtNG0woVOtGmMYRrWggBeqTvOJN6DAz1Ab1zfTlDAYWTsIkZqkHOUrBTkp3acWDPtxhzhYF1a=w633-h633-s-no-gm?authuser=0"
-            alt="Mecha"
-            class="profile-pic"
-          />
-          <h3>Kharissa Kurnia Mecha</h3>
-          <div class="details">
-            <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 30 Juni 2008</p>
-            <p><strong>Jenis Kelamin :</strong> Perempuan</p>
-            <p><strong>Agama :</strong> Islam</p>
-            <p><strong>Alamat :</strong> Pageruyung RT 3 RW 2 Pagergunung Pageruyung Kendal</p>
-            <a href="https://photos.app.goo.gl/axnya3uPsoxbj7N8A" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczNBu609XIhazgjYCpIEHWILumT3kVPX4elJ8W9HbZ3Q8M4yc78EQP3R3rNy6r0rzSHRmcCFh5dlOfzFGnNbK8xo6Wir6StwaDnx8H4fU8-1UWv-mSC2h7z0cMZGvncxn5pRbrVvRrP4tg0I-w5LiNms=w633-h633-s-no-gm?authuser=0"
-            alt="Marlina"
-            class="profile-pic"
-          />
-          <h3>Marlina Indah Sari</h3>
-          <div class="details">
-            <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 08 Maret 2008</p>
-            <p><strong>Jenis Kelamin :</strong> Perempuan</p>
-            <p><strong>Agama :</strong> Islam</p>
-            <p><strong>Alamat :</strong> Krajan RT 3 RW 4 Gebangan Pageruyung Kendal</p>
-            <a href="https://photos.app.goo.gl/LeGyyASdQ9d6iRpYA" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczN1WI2fVPRiJmHuoY8XyGbrRGAEE2ytRHfYM_-O-rMETOtZ9T1vgtYM19tFnrwiChU41SGTiZGLGiXBkMNe8VHXjY792N4oggv6EL1fq8BLUu4knPBfRw8eT_XLySMKmF_jwmjtTa93ysOlK8BidJoh=w475-h633-s-no-gm?authuser=0"
-            alt="Maulana"
-            class="profile-pic"
-          />
-          <h3>Maulana Jihaniyavi "stepen"</h3>
-          <div class="details">
-            <p><strong>Alamat :</strong> ngrowo,patean nek tak gowo abot</p>
-            <p><strong>Lahir :</strong> dari ibuk</p>
-            <p><strong>Cita-cita :</strong> istri 5</p>
-            <p><strong>Hobi :</strong> luru tobrut</p>
-            <a
-              href="https://www.instagram.com/mmaauullaana?igsh=Z3V1bjBtaG5janI2"
-              target="_blank"
-            >
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-            <a href="https://www.tiktok.com/@maulanajihaan" target="_blank">
-              <ion-icon name="logo-tiktok"></ion-icon>
-            </a>
-            <a href="https://photos.app.goo.gl/nbrZBthDgMAUfVLk8" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczNhv0Mz6y1EsSSoliPryLBRFMrtcUywWXEt5Wc4U4abbahNyWJRZhVhTwcfBtdxVEZyhG7xNNqjcZTkFC9FwRFwlqOobaCE0c1PUoIhkqWKo5hBzi71fe6RZeB_UWlzGUAxNBtRauqjZG0TOK6VexaW=w633-h633-s-no-gm?authuser=0"
-            alt="Nalasari"
-            class="profile-pic"
-          />
-          <h3>Nalasari Aghniya</h3>
-          <div class="details">
-            <p>
-              <strong>Alamat :</strong> parakan sebaran, pageruyung (soon jadi
-              china)
-            </p>
-            <p><strong>Tanggal Lahir :</strong> 9 april 2008 ( kalo ga salah)</p>
-            <p><strong>Asal/Suku :</strong> jawa nyelll</p>
-            <p><strong>Suami :</strong> lee jeno, park jimin cihuyy</p>
-            <a
-              href="https://www.instagram.com/nlaniylovee?igsh=enVuZm5qbDczdWNo"
-              target="_blank"
-            >
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-            <a
-              href="https://www.tiktok.com/@user904png?_t=8piTrFXsR5k&_r=1"
-              target="_blank"
-            >
-              <ion-icon name="logo-tiktok"></ion-icon>
-            </a>
-            <a href="https://photos.app.goo.gl/7buuA88Y94rCPjeCA" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczOggSVjZ7lK_8W_JVc9qkXo-66ZETnOTmjdo8XKi6gF7xhfq2bICklMF05_QDhK4uoOQr-CPZcXe036g0-sReach8x4VpS6nNOkVxM17zaq4_ceeHQV1o55OmgfZu7ODlYbT-60ZJoq64BRKI33qjfd=w633-h633-s-no-gm?authuser=0"
-            alt="Nayla"
-            class="profile-pic"
-          />
-          <h3>Nayla Karima Zahirannisa</h3>
-          <div class="details">
-            <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 14 Juli 2008</p>
-            <p><strong>Jenis Kelamin :</strong> Perempuan</p>
-            <p><strong>Agama :</strong> Islam</p>
-            <p><strong>Alamat :</strong> Bogosari RT 4 RW 1 Tambahrejo Pageruyung Kendal</p>
-            <a href="https://photos.app.goo.gl/AUSsCUaqEUfv2cuH6" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczMyxuUfvCwpNP_xFMubdgc1N9A2iMBDlZunoD2J-u-T-hW6sRrVa7v96ETWvn3YJlgCLAW-rE8f4HLaDqJL2N0AIssWNyj_VsXQEHg3o6HMPfP2s4NIQdqaCuBPPgVIw5MwmPIok5WJFxzxM9IaWQqr=w633-h633-s-no-gm?authuser=0" alt="Naysilla" class="profile-pic" />
-          <h3>Naysilla Ramadhani</h3>
-          <div class="details">
-            <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 12 September 2008</p>
-            <p><strong>Jenis Kelamin :</strong> Perempuan</p>
-            <p><strong>Agama :</strong> Islam</p>
-            <p><strong>Alamat :</strong> Ngadiwarno RT 4 RW 1 Sukorejo Sukorejo Kendal</p>
-            <a href="https://photos.app.goo.gl/JVbmtf3CE5P8Jvf56" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczOosiegw3VJPNQ4RvQA19YH_LkCDin5GRPSksueoUrX0g_Mkr3e5DbR4NYjhEFwEt1jSAAm2EMcsSnM1KpLCvf4FXBblvhz4nWxjWwCM-avxR7a-uPhpA4KXWJmC18sb4fAaKfxSXOw6WxO0bhEBhyr=w633-h633-s-no-gm?authuser=0"
-            alt="Nessa"
-            class="profile-pic"
-          />
-          <h3>Nessa Mike Ardinasari</h3>
-          <div class="details">
-            <p><strong>Alamat :</strong> Sidomukti, Weleri</p>
-            <p><strong>Tanggal Lahir :</strong> 15 Desember 2007</p>
-            <p><strong>Cita-cita :</strong> jadi istri juragan sapi</p>
-            <p><strong>Status :</strong> jomblo</p>
-            <a href="https://www.instagram.com/nssamke?igsh=MWxkbHg5NWJid2I0Mg==">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-            <a href="https://www.tiktok.com/@mkeeaaaa?_t=8px7oOQ6wiG&_r=1" target="_blank">
-              <ion-icon name="logo-tiktok"></ion-icon>
-            </a>
-            <a href="https://photos.app.goo.gl/52yHpLXXW3zbKzEk7" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczPqHxLHCSD3uE3lWmpeSSFGbYgRY43tj4jUugd2Z0iQXukF2oI6ajfKkljcV2V7JoFim3swCNJjUMpvZylbdunoixjMU6IS-0pf0OuG5TdgOk6DMOeojefA7B7gPOBIyi69AdpGIa4aE2Ohx-wFkNX7=w633-h633-s-no-gm?authuser=0" alt="Arga" class="profile-pic" />
-          <h3>Nur Alif Arga Prastia</h3>
-          <div class="details">
-            <p><strong>Tanggal Lahir :</strong> 22 Januari 2009</p>
-            <p><strong>Cita-cita :</strong> Programer</p>
-            <p><strong>ID Mobile legend :</strong> (947691037) Mabar gw roam</p>
-            <p><strong>Pasangan :</strong> Masih Kosong</p>
-            <a
-              href="https://www.instagram.com/n_al_arg_setya?igsh=MXZ1MDRjMXYyMTR4Mw=="
-              target="_blank"
-            >
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-            <a
-              href="https://www.tiktok.com/@alifarga2201?_t=8piSHMXDr8L&_r=1"
-              target="_blank"
-            >
-              <ion-icon name="logo-tiktok"></ion-icon>
-            </a>
-            <a href="https://photos.app.goo.gl/D2kaZ4QsJ6214JKh7" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczMWHCv-BPpUNKWzEl8ec8HStN2ETDyqJZhswSikJ6S8ZccgotzzUt448s2O8rm6n3aGGlWYCabxiFyNQZUBXyj-OeaefEU8i3xzwXGepBB0vnrPspso0HoQ_RfDlbXx45GkumYKNNqt-uQpA6pfSlV4=w633-h633-s-no-gm?authuser=0" alt="Putra" class="profile-pic" />
-          <h3>Putra Abdurrahman Muhammad</h3>
-          <div class="details">
-            <p><strong>Alamat :</strong> Weleri, Weleri</p>
-            <p><strong>Tanggal Lahir :</strong> 12 Februari 2008</p>
-            <p><strong>Asal/Suku :</strong> Jawa</p>
-            <p><strong>Pasangan :</strong> Kamu</p>
-            <a href="https://photos.app.goo.gl/syBS3aNVMgJhZscM6" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczNOFsKdVZ7L0JfQLwOfhrAuolIVMA_eXANLQrQN4cA1euMdAYjrGd8x9CfenhiY-SK14FpDFpNUn5l0OXcPAntz_8b2nKV1ZtZveTr9tm0yW7OencnQ6KbhO-0Rh6CGtCpkHKcd-QEdsAk_RkNYclD6=w633-h633-s-no-gm?authuser=0" alt="Ella" class="profile-pic" />
-          <h3>Risma Ella widayanti</h3>
-          <div class="details">
-            <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 14 Juni 2008</p>
-            <p><strong>Jenis Kelamin :</strong> Perempuan</p>
-            <p><strong>Agama :</strong> Islam</p>
-            <p><strong>Alamat :</strong> Jl. Misman RT 2 RW 1 Tampingwinarno Sukorejo Kendal</p>
-            <a href="https://photos.app.goo.gl/Jk3vbpLYGtQ2YyLq7" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczMML30WjB-uAUe61UilKuSwuE1m9EbL-LGKzDmCFQFmd_aZ3gBCjiy_8j8HPpZBqulZ8RxOXt_Ff5CMdnS1ZTnqntZoH3yqCFZBu-Mqv7Xqm6CUr_-vXkcpoETawJZyI2_5j30hxhH6FGGobK4CdX0g=w633-h633-s-no-gm?authuser=0"
-            alt="Risti"
-            class="profile-pic"
-          />
-          <h3>Risti Munthoharoh</h3>
-          <div class="details">
-            <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 30 September 2007</p>
-            <p><strong>Jenis Kelamin :</strong> Perempuan</p>
-            <p><strong>Agama :</strong> Islam</p>
-            <p><strong>Alamat :</strong> Tempel RT 4 RW 1 Petung Pageruyung Kendal</p>
-            <a href="https://photos.app.goo.gl/fbUH3kwdEaX3Fnu69" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczNht6nf1wuBo8kI_lq71aAKuRJFEEsnno5fQmBjnpntLRs5jeaftTkeWLn5cJub6K0qQpDK0-2AmOpC_65qftnpvA7Y37hdri_lyq9LK8LmU09-sRlxiZI4QjepBycrlbSpU3hneJO11JH-3H5pibnp=w284-h284-s-no-gm?authuser=0" alt="Rofiatun" class="profile-pic" />
-          <h3>Rofiatun</h3>
-          <div class="details">
-            <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 26 November 2008</p>
-            <p><strong>Jenis Kelamin :</strong> Perempuan</p>
-            <p><strong>Agama :</strong> Islam</p>
-            <p><strong>Alamat :</strong> Damarjati RT 10 RW 2 Damarjati Sukorejo Kendal</p>
-            <a href="https://photos.app.goo.gl/kSz56WjCWJS8Zqrk6" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczNjD4Z8HOgNYcKKK-GKbt2eL92MraUk5ulki6XObgmE8P3-rpRqni1nxre_JaN78Tt3Ap3M0jD-GWVOF_k9f_TiMnYstz-9A5gPxg7iTgouiPGtDGAmAKUF3n3H7xjyQ6kD1BOhL3A34Ix4i7V0-OFs=w576-h569-s-no-gm?authuser=0"
-            alt="Vina"
-            class="profile-pic"
-          />
-          <h3>Vina Layinatu Syifa</h3>
-          <div class="details">
-            <p>
-              <strong>Alamat :</strong> bumi tp pgn pindah ke mars soalny org
-              bumi gaje
-            </p>
-            <p>
-              <strong>Tanggal Lahir :</strong> gaperlu tau, paling jg ga
-              ngucapin(27 Juni 2008)
-            </p>
-            <p>
-              <strong>Kata² :</strong> klo hidupmu bnyk msalh, y uda nmny jg
-              hidup kocak
-            </p>
-            <p><strong>Pacar :</strong> Na Jaemin (dan masih ada 50 lainya😈)</p>
-            <p><strong>Reminder:</strong> don't skip a meal -Na Jaemin</p>
-            <a
-              href="https://www.instagram.com/vvv_naacsj?igsh=MWw4NTUybXN4YTh3ag=="
-              target="_blank"
-            >
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-            <a
-              href="https://www.tiktok.com/@cccnasyf?_t=8piSIyMMlRS&_r=1"
-              target="_blank"
-            >
-              <ion-icon name="logo-tiktok"></ion-icon>
-            </a>
-            <a href="https://photos.app.goo.gl/ZiUbTjYpiEjhmXaa8" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczPMQm6pfORH8ZTCCyCTjS8FUvq5y3TvcKCPtOotMsOvFNxRzqVNAAVv1eeSmOIGnq3Y6nUyAEXIIjN_NXAiHrugULd07lrnqYWw8QqNqwwWQRcPMetZfRmH0nHRefLb0jom_qJmkHxkLzbdywnRS_wT=w633-h633-s-no-gm?authuser=0"
-            alt="Widya"
-            class="profile-pic"
-          />
-          <h3>Widya Anindita</h3>
-          <div class="details">
-            <p><strong>Alamat :</strong> patean</p>
-            <p><strong>Tanggal Lahir :</strong> may</p>
-            <p><strong>Hobi :</strong> bantai elit cs, sayang’in zaim, masakk</p>
-            <p>
-              <strong>[12.05.48 PM] 💗 :</strong> walaupun nonong tetap cantik
-            </p>
-            <a
-              href="https://www.instagram.com/vviiindy?igsh=MW9yaXdxaTY4dGR4ag=="
-              target="_blank"
-            >
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-            <a
-              href="https://www.tiktok.com/@nnaindy?_t=8pk8mIdU8yW&_r=1"
-              target="_blank"
-            >
-              <ion-icon name="logo-tiktok"></ion-icon>
-            </a>
-            <a href="https://photos.app.goo.gl/NsSds3zi5vi4D3ik6" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-        <!-- Ulangi blok ini untuk setiap murid -->
-        <div class="card" onclick="toggleDetails(this)">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczOdMIPcTxZn5S9x2N_ZZIn9JH5wh7SMQATXm5NjxUn1qN_XXuNg2kD__7O9fVnE00ApK_msoX_GkM_9V5LBFUBwft3OsCy6c_H2z3IhR-Q7l2ny29yHWH_czBajSV4Z5q4hiKljBbwBZWnroLWxj_iX=w633-h633-s-no-gm?authuser=0"
-            alt="Yulia"
-            class="profile-pic"
-          />
-          <h3>Yulia Deviani</h3>
-          <div class="details">
-            <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 29 Oktober 2007</p>
-            <p><strong>Jenis Kelamin :</strong> Perempuan</p>
-            <p><strong>Agama :</strong> Islam</p>
-            <p><strong>Alamat :</strong> Kiringan RT 4 RW 6 Trimulyo Sukorejo Kendal</p>
-            <a href="https://photos.app.goo.gl/UifPBxBBoWj5AYVB7" target="_blank">
-              <ion-icon name="images"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <!-- Akhiri blok -->
-      </div>
-    </section>
-
-    <!-- Icon Chat -->
-    <div id="chat-icon">
-      <ion-icon name="chatbubble-outline"></ion-icon>
     </div>
 
-    <!-- Chat Popup -->
-    <div id="chat-popup" class="hidden">
-        <div class="chat-container">
-            <div class="chat-header">
-                <h2>Chat</h2>
-            </div>
-            <div id="chat-output" class="chat-output"></div>
-            <div class="chat-input-container">
-                <input type="text" id="name-input" placeholder="Masukkan nama" />
-                <textarea id="message-input" placeholder="Masukkan pesan" rows="3"></textarea>
-                <button id="send-btn">
-                    <ion-icon name="paper-plane-outline"></ion-icon>
-                </button>
-            </div>
+    <!-- Murid-Murid -->
+    <div class="student-cards">
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)" style="filter: saturate(0);">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczPdd0XGhwSx1RaGj0i3qsxvIDiwBxvBtgqGi0sMYafLSxdvfU1vJCGw8WG06qw5BZP8De-Px6JBlHwiGhmNo_PSCM3o-11BNQ8nEDxKxlalOZ_8FGU23AKR5QMAw7jJQlmaC99afpY27Gd4c2uLT6d-=w716-h715-s-no-gm?authuser=0"
+          alt="Abel" class="profile-pic" />
+        <h3>Abel Nova Azzahrah</h3>
+        <div class="details">
+          <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 14 November 2007</p>
+          <p><strong>Jenis Kelamin :</strong> Laki-laki</p>
+          <p><strong>Agama :</strong> Islam</p>
+          <p><strong>Alamat :</strong> Pesaran RT 2 RW 2 Pesaren Sukorejo Kendal</p>
+          <a href="https://photos.app.goo.gl/Y4enYDcgm5hxCXHn8" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
         </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczMGdFqqSp0zW7yPV9cEApWATuMveUPyFgKhxPH4mWeNIcLlTRIUzf18LqxfUYtDbODoNtIaT9KURxrxQaDXpxAJyCNFiDVBA4WZ4wuUgCeLt4HKJu1VS_HDK8LV_XgTDigs5N3prkJB-KWES3FheMvu=w634-h633-s-no-gm?authuser=0"
+          alt="Bunga" class="profile-pic" />
+        <h3>Adelia Bunga Febrianti</h3>
+        <div class="details">
+          <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 24 Februari 2009</p>
+          <p><strong>Jenis Kelamin :</strong> Perempuan</p>
+          <p><strong>Agama :</strong> Islam</p>
+          <p><strong>Alamat :</strong> Kalidamar RT 3 RW 1 Damarjati Sukorejo Kendal</p>
+          <a href="https://photos.app.goo.gl/nzzsTZBA4WKUtxi79" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczNhWWURrpzvKu9NqjqfBxKTeaJr4pRe370TJxthqrHNEuJdMIenyB_GBueh7BHelZEVBA9w2uFysToxuMJvnjL7W1EfZ9M22pLL6f94MWfy9GUnGPUXiuTQ9qtzFM21yq7hKNRoHNPEY-wopybdUg6F=w633-h633-s-no-gm?authuser=0"
+          alt="Alif" class="profile-pic" />
+        <h3>Alif Alfan</h3>
+        <div class="details">
+          <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 01 Desember 2007</p>
+          <p><strong>Jenis Kelamin :</strong> Laki-laki</p>
+          <p><strong>Agama :</strong> Islam</p>
+          <p><strong>Alamat :</strong> Jl Gondoriyo RT 3 RW 1 Gondoharum Pageruyung Kendal</p>
+          <a href="https://photos.app.goo.gl/CFXfoEySiFi7czqu5" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczNlmN-jREWr8APubKOZ5PA076AfciGvACbMZXIa6LOZ2_CvU-4Jgd29Ux_gViPbSotA6lwu2TJObtrKG6BRdDrIyHivkOTfUUUNANZ6WPMt5JPdjfw6otgNeynmnaQSqtpO5bii1WEN4UmgnvdcDA17=w633-h633-s-no-gm?authuser=0"
+          alt="Annisa" class="profile-pic" />
+        <h3>Annisa Nur Fadlilah</h3>
+        <div class="details">
+          <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 16 Juli 2008</p>
+          <p><strong>Jenis Kelamin :</strong> Perempuan</p>
+          <p><strong>Agama :</strong> Islam</p>
+          <p><strong>Alamat :</strong> Parakan RT 12 RW 2 Manggungmangu Plantungan Kendal</p>
+          <a href="https://photos.app.goo.gl/RcGX6GbE2F1mVbz89" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczPZCnTYXp7Zh2hx8wXnd-I4Pd2NBFmqpL3PemaZoFz1hR-8xUqG_za-YPRG9LwcN0xOx-6ongQcjiDk0_PzEmWLYmobuWoGnmsRNONW7EfGrFl8i0_Mo4EGxenqkbnR3BQRDmC6RnjxDSrDMkmLSHni=w633-h633-s-no-gm?authuser=0"
+          alt="Aulia" class="profile-pic" />
+        <h3>Aulia Arin Maftuckah</h3>
+        <div class="details">
+          <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 07 Agustus 2008</p>
+          <p><strong>Jenis Kelamin :</strong> Perempuan</p>
+          <p><strong>Agama :</strong> Islam</p>
+          <p><strong>Alamat :</strong> Cepit Kulon RT 1 RW 3 Pageruyung Pageruyung Kendal</p>
+          <a href="https://photos.app.goo.gl/U9pLCTSY9E3PKbk4A" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczMbr5S1Y7KTj4YfcBj97jF6rsmADU27Oaf7a2QoveY053_GOwciT8bQNfaFyaq4vQHlAWbDcNWjccWlW-bAd7Rb9mriBGXibsf6Xc1776_rYvRTVtrzzhrVy49UtQcsPTK-bhnz-BIWt9qxFZVlZZCs=w633-h633-s-no-gm?authuser=0"
+          alt="Brillian" class="profile-pic" />
+        <h3>Brillian Yusuf Sejati</h3>
+        <div class="details">
+          <p><strong>Alamat :</strong> Bumiayu, Weleri</p>
+          <p><strong>Tanggal Lahir :</strong> 10 Oktober 2007</p>
+          <p><strong>Asal/Suku :</strong> Jawa</p>
+          <p>
+            <strong>My Wife :</strong> Short hair with glasses and
+            flat
+          </p>
+          <a href="https://www.instagram.com/bys.2007/" target="_blank">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@bys2007" target="_blank">
+            <i class="bx bxl-tiktok"></i>
+          </a>
+          <a href="https://photos.app.goo.gl/BDAHtf1aEPW6Ukyi6" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczObWYfyEvWEdjJKp3WsHuvy4MoeSQhhS8yxkhbI54FKeC_GqaD_ZvJWOR0ETBA_7xHIwfSwHprc5MmGPfCBUXRaL4FyZqhl5tIbzJZE9OokOgqVdf-ZnRt6pr8JeA88bOYQMusI3JeE-T_lMLx3HkQP=w475-h633-s-no-gm?authuser=0"
+          alt="Dian" class="profile-pic" />
+        <h3>Dian Putri Kartikasari</h3>
+        <div class="details">
+          <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 17 September 2008</p>
+          <p><strong>Jenis Kelamin :</strong> Perempuan</p>
+          <p><strong>Agama :</strong> Islam</p>
+          <p><strong>Alamat :</strong> Tejorejo RT 4 RW 6 Tejorejo Ringinarum Kendal</p>
+          <a href="https://photos.app.goo.gl/MxksHaPTc4iVXAhZ6" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczNS1V3tF38LCZDxdY7cnA8zt-dTQ_Aba08_2P4cfhso9U5ddr3ryPdq1ZgbBmTY4aswkWvxQEhdOBj-4jeYBGyzf2G0FxJxOVuS90kP2s7cf1KKtK7CnEfzcn4cxF9VMVQpwwjJOn8-Xo1uvMeoi9Hf=w913-h913-s-no-gm?authuser=0"
+          alt="Dimar" class="profile-pic" />
+        <h3>Dimar Nur Arifin</h3>
+        <div class="details">
+          <p><strong>Serial/Film favorit :</strong> A Silent Voice</p>
+          <p><strong>Hobi :</strong> Menonton Anime</p>
+          <p><strong>Genre Hidup :</strong> Horror</p>
+          <p>
+            <strong>Kepribadian :</strong> Dingin, Tenang, Sadis,
+            Manipulasi.(Kek Johan LiebertðŸ˜ˆðŸ˜ˆ)
+          </p>
+          <a href="https://www.instagram.com/dimar.na?igsh=cDgyeW9qbWFtcHFi" target="_blank">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@babyy_nuts?_t=8pUNnnyY3FK&_r=1" target="_blank">
+            <i class="bx bxl-tiktok"></i>
+          </a>
+          <a href="https://photos.app.goo.gl/RWy8v31rqUQUtAo18" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczPw7RSuqIpZYiAbBnsLJjQ0_Ds2T9eYhiiu61P1ECxKwUsKOOReAu6hIqkQl3bAhK3qRIpSCAlSzg635QhS5JorAOHK_Y_YAMEj8nM3_XDEZweCPeWkKnuZsU6Selq5FTBTztrEGtRa-Xj2Tb6j7aik=w633-h633-s-no-gm?authuser=0"
+          alt="Dinda" class="profile-pic" />
+        <h3>Dinda Puspita Ayuningtyas</h3>
+        <div class="details">
+          <p><strong>Tempat Tanggal Lahir :</strong> Candipura, 22 Juni 2008</p>
+          <p><strong>Jenis Kelamin :</strong> Perempuan</p>
+          <p><strong>Agama :</strong> Islam</p>
+          <p><strong>Alamat :</strong> Gondoharum RT 1 RW 2 Gondoharum Pageruyung Kendal</p>
+          <a href="https://photos.app.goo.gl/2gMB26UKMyLC5kVr7" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczOpcN8uI7kz-P6GHvvSYfd-9x9C3m_GxIwppJUSPTpGk5e0PW8AyD59XsUPq-2Y8fVKxOd2WR23WK59gnZWCeuOAJx6ATfF2s956kqjxPHombF36B7xzmFJdOpDi600uHPj-3o19EjVPte5bDNMVJOH=w576-h576-s-no-gm?authuser=0"
+          alt="Eleen" class="profile-pic" />
+        <h3>Eleen Aulia Nafisa</h3>
+        <div class="details">
+          <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 12 Maret 2008</p>
+          <p><strong>Jenis Kelamin :</strong> Perempuan</p>
+          <p><strong>Agama :</strong> Islam</p>
+          <p><strong>Alamat :</strong> Bogosari RT 4 RW 1 Tambahrejo Pageruyung Kendal</p>
+          <a href="https://photos.app.goo.gl/JCQq64okd2YaPt6X7" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczOxhNRZKQAOpm0CDg66-_rAaSjwYVSWwQc5BeJLKmD_CtKDs-_QUn1fYT7Jcax_PkLvuDStqX0XTJ9F8I4jAQbCyq5vYE94E31PLsWgfNX3CJ0q5v8X4MlaE9Roh99eV41h_pJTHUS6Zsw8r6dtdIey=w633-h633-s-no-gm?authuser=0"
+          alt="Enggar" class="profile-pic" />
+        <h3>Enggar Widyaningrum</h3>
+        <div class="details">
+          <p><strong>Alamat :</strong> patean</p>
+          <p><strong>Tanggal Lahir :</strong> 1 november 2008</p>
+          <p><strong>Suami :</strong> jeong jaehyun</p>
+          <p><strong>Cita-cita :</strong> mau beli iyunggg iyunggg</p>
+          <a href="https://www.instagram.com/tira.misul0vee?igsh=bjFhZ3BxZDlmZno1" target="_blank">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="https://photos.app.goo.gl/iGvm1NdFYE6MjR3W7" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczO5G4OydLX5zfsjAO1Houe8WIUnSruNLm0sI29x7oz0nGMEvmrMd8HTWrhFQ2rs1uVqNbO_dbopYP_royB413trY1lI-cB8ZkVNyfrkkXwf3SbeApSSJdG2muZ_Qh5d_yRAwNYA_9gwaWJ3he8yrWDI=w633-h633-s-no-gm?authuser=0"
+          alt="Erlita" class="profile-pic" />
+        <h3>Erlita Deva Agustina</h3>
+        <div class="details">
+          <p><strong>Alamat :</strong> Mranggen</p>
+          <p><strong>Tanggal Lahir :</strong> 20 Agustus</p>
+          <p><strong>Kesukaan :</strong> suka film hororrr aw</p>
+          <p><strong>Status :</strong> punya cwo</p>
+          <a href="https://www.instagram.com/liitaawww?igsh=MWVwdnA3dnlzNXdzcQ==" target="_blank">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@lliiiittaaa?_t=8pmqafnlua2&_r=1" target="_blank">
+            <i class="bx bxl-tiktok"></i>
+          </a>
+          <a href="https://photos.app.goo.gl/gwPuZcL1ZpVQdYp76" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczMBJlD0O7_Qx5umAyII4sbGvUkMfR8uu3_KK3q_Fauci3V5wFHcLYUvUBRhU3tsmvQfjFmX2wFsXGSzDksYR0czaqwzfazg6Vq29rPktwgJfKKzJqgZ6zdgZYdU56uZY-g9NY2bHXmOz058_bNxu29K=w634-h633-s-no-gm?authuser=0"
+          alt="Faris" class="profile-pic" />
+        <h3>Faris Elfrida Hadriyansyah</h3>
+        <div class="details">
+          <p><strong>Alamat :</strong> Plantungan, Kendal</p>
+          <p><strong>Agama :</strong> Islam</p>
+          <p><strong>Hobi :</strong> Membaca</p>
+          <p>
+            <strong>KataÂ² :</strong> "Sesuatu yang indah tidak diraih dengan
+            mudah"
+          </p>
+          <a href="https://www.instagram.com/farisell_?igsh=bDZrcTc5bmV0Ymkx" target="_blank">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@fariisell?_t=8pkNYQM2MIz&_r=1" target="_blank">
+            <i class="bx bxl-tiktok"></i>
+          </a>
+          <a href="https://photos.app.goo.gl/CUjgYqHvXr9vpDh37" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczPvZd7l5Nk0jpFj2LWhvH5mFVEB-PE2zeWUDjEYBGkBvHUzPsD0k6JX_HS8ZaXl_XIihJUtNqRBTlhDxYeylmtkiMQjnH_FEhePjiTlI8Groxd8bEoxUkKpEZVhRJekGeLDrA8Tr-b6Y0ey9Fjlccb6=w633-h633-s-no-gm?authuser=0"
+          alt="Ferlyana" class="profile-pic" />
+        <h3>Ferlyana Glady Savila</h3>
+        <div class="details">
+          <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 05 Februari 2008</p>
+          <p><strong>Jenis Kelamin :</strong> Perempuan</p>
+          <p><strong>Agama :</strong> Islam</p>
+          <p><strong>Alamat :</strong> Bogosari RT 4 RW 1 Tambahrejo Pageruyung Kendal</p>
+          <a href="https://photos.app.goo.gl/aaq3Trm7qUSZXFcE9" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczN6A3mx1bMiOyvaE5Ycb5mHY84ugqqmzh3R3N_Tu9hJlVqWaK4hjIFdtg_8d62v46oJxYaSwT1Wr9jp8DDhDkg6hb9gDyYl3VnhtFSmXEZQOV-Eb_MQPkrtLB2otms3lM8J1N4XrQc2w3D9nx4qi8MB=w606-h606-s-no-gm?authuser=0"
+          alt="Ghofur" class="profile-pic" />
+        <h3>Ghofur Reza Ananta</h3>
+        <div class="details">
+          <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 27 November 2008</p>
+          <p><strong>Jenis Kelamin :</strong> Laki-laki</p>
+          <p><strong>Agama :</strong> Islam</p>
+          <p><strong>Alamat :</strong> Randusari RT 8 RW 4 Kalibareng Patean Kendal</p>
+          <a href="https://www.tiktok.com/@rezy_445?_t=8pUN4Pl4e99&_r=1" target="_blank">
+            <i class="bx bxl-tiktok"></i>
+          </a>
+          <a href="https://photos.app.goo.gl/ESDi9nQFgCMv8fe76" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczPMpSXASvpAKwqFqoLcL_ShSAIpsCIpvHBGiO-gH3Q2MNx6brBlUQE58mOPFTyBm5_4ojkXNFxbYKXM_pAIwr0sYj6uaprSfuUxLqCIEN6gqOP8OSrhEx7O-TSQuXYg3CIvJOKIK0V-ZISzOO6wVpvt=w633-h633-s-no-gm?authuser=0"
+          alt="Intan" class="profile-pic" />
+        <h3>Intan Cahaya Salsabila</h3>
+        <div class="details">
+          <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 08 April 2008</p>
+          <p><strong>Jenis Kelamin :</strong> Perempuan</p>
+          <p><strong>Agama :</strong> Islam</p>
+          <p><strong>Alamat :</strong> Wonosido RT 2 RW 3 Mlatiharjo Patean Kendal</p>
+          <a href="https://photos.app.goo.gl/dFLGHxRsWmwLV8j89" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczPj72gVy7PdP974QSy9lANLM6mwbzsGSENp5nMkNsZ3nXCdU3oUr5fSTpLM_OPZTRpH0AxN8cFjiRWhpizrTn3mM5c-tLYRzOToP-SXUMBHxlDeUEUbzaoE2s1C1rV4eVjwqvu81_ghv-1CYV14w8W6=w633-h633-s-no-gm?authuser=0"
+          alt="Intan Melisa" class="profile-pic" />
+        <h3>Intan Melisa Nur Aeni</h3>
+        <div class="details">
+          <p><strong>Alamat :</strong> Krajan, Pagergunung pridee</p>
+          <p><strong>Tanggal Lahir :</strong> 5 April</p>
+          <p><strong>Cita-cita :</strong> marga "kageyama"</p>
+          <p><strong>KataÂ² :</strong> "kapan kita kya dlu lagi"</p>
+          <a href="https://www.Instagram.com/i.lisacc" target="_blank">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@int4nime._" target="_blank">
+            <i class="bx bxl-tiktok"></i>
+          </a>
+          <a href="https://photos.app.goo.gl/nKuii24BsYptLDpy8" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczM59BnO3JyTuAy8xaIJ4S0Jn1TjTUD-HzmHjotm4_s-zNYcll-Vv-_nvzP5qBaiQG-8oeUg-33qNKV8tst6Syr2Wa1nt71LM140cZ997kILr4UkKKjllFu0r0OVtquJMiYvI53s5tOEWMuKDrV0NN2t=w633-h633-s-no-gm?authuser=0"
+          alt="Jasmine" class="profile-pic" />
+        <h3>Jasmine Nurmaulidha</h3>
+        <div class="details">
+          <p>
+            <strong>Panggilan :</strong> hallo aku jasmin tapi sering di
+            panggil mimin atau mine
+          </p>
+          <p>
+            <strong>Alamat :</strong> alamat ku bogosari tambahrejo pageruyung
+            kendal
+          </p>
+          <p>
+            <strong>Tanggal Lahir :</strong> aku lahir 14 april 2008 di kendal
+            yaaa
+          </p>
+          <p>
+            <strong>Kesukaan :</strong> emm aku suka voli,karna karo suka kmu
+            banyak sainganya
+          </p>
+          <a href="https://www.instagram.com/jsmn.xzy_?igsh=NXRlNnZrMG80Z3Jt" target="_blank">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@j.z_04?_t=8pZQRqJQADc&_r=1" target="_blank">
+            <i class="bx bxl-tiktok"></i>
+          </a>
+          <a href="https://www.instagram.com/mine_teaaa?igsh=MTdlb21jMms1NTNwdw==" target="_blank">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="https://photos.app.goo.gl/7UJ7Gjkm1XkpXTPq7" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczOeGift-AOnMSOg8i1y2ZZcC1AxMBZeWoNebgyDzC12DxyXhSP_A7MaQvjB-O-ZUbURz1-pshB7syV1Gz11KDe06-Q3sFolbehIx3TCUhp880XtZqQSd4YMuDP6dZTNn_dRbCsHLAtrb5TPyosDQQWS=w633-h633-s-no-gm?authuser=0"
+          alt="Jazilla" class="profile-pic" />
+        <h3>Jazila Maftukha</h3>
+        <div class="details">
+          <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 14 Maret 2008</p>
+          <p><strong>Jenis Kelamin :</strong> Perempuan</p>
+          <p><strong>Agama :</strong> Islam</p>
+          <p><strong>Alamat :</strong> Widoro RT 3 RW 5 Bangunsari Pageruyung Kendal</p>
+          <a href="https://photos.app.goo.gl/3VnwJbN6LsVXymvT7" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczN_zKFPDHoFemsFu3i95i9q-DF8H9sSRLMOvBduW2cs-3nUTXf3KbPy6d-sBIOIm_ajUE9yqPXbwqKOrIsF0orT_gG28l63mSNMPcbFk78jtVnFFimfFKXxEiBEw09ZTTEFdJPUDLP2u6fmY1eYs2JQ=w633-h633-s-no-gm?authuser=0"
+          alt="Kayla" class="profile-pic" />
+        <h3>Kayla Nazwa Eliza</h3>
+        <div class="details">
+          <p><strong>Alamat :</strong> Kendal</p>
+          <p><strong>Tanggal Lahir :</strong> 9 Januari 2008</p>
+          <p><strong>Golongan Darah :</strong> B</p>
+          <p><strong>Cita-cita :</strong> jadi orang kaya</p>
+          <a href="https://www.instagram.com/keynazae_?igsh=MWJqazV1MjFwNWd0bQ==" target="_blank">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@kelannay?_t=8pp30FhrwlM&_r=1" target="_blank">
+            <i class="bx bxl-tiktok"></i>
+          </a>
+          <a href="https://photos.app.goo.gl/MRe2jcx7ZeKp7Mdh6" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczOM0MbSZZ1gWo91WoTgrFgUmvJMQ9NkCaOM8fRy2Vjmm_DwAMFWcJevXJ4cY3cDNFoDbMwofx7Y4UGgzMG2fSyMHa5WOCTgR_mOOsW9Tlh9Nhj_N3AlaJfeNmiLq-F7B_mcDiYT3W63B7mwhu1ZyvqQ=w633-h633-s-no-gm?authuser=0"
+          alt="Kharisma" class="profile-pic" />
+        <h3>Kharisma Aulia Faigrima</h3>
+        <div class="details">
+          <p><strong>Alamat :</strong> Sempulawa, Surokonto Wetan</p>
+          <p><strong>Tanggal Lahir :</strong> 4 Januari 2009</p>
+          <p><strong>Keadaan :</strong> lagii galauuu</p>
+          <p><strong>Cita-cita :</strong> menjadiii pengusaha suksesðŸ¤™</p>
+          <a href="https://www.instagram.com/kharismaauliaaaa_?igsh=bThsYzF6aDh4dWFi" target="_blank">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@kharismaaulia0?_t=8px82bbX7eJ&_r=1" target="_blank">
+            <i class="bx bxl-tiktok"></i>
+          </a>
+          <a href="https://photos.app.goo.gl/Dgrd8dFBzCq4u9Uk8" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczPm2UN50m-tcWhJemGOGMdXzQKKAHbiS-UO-V8f0SgcDFBHjgtEJtQtxLVzyE3WJURAiT0g-PIjXNiPtNG0woVOtGmMYRrWggBeqTvOJN6DAz1Ab1zfTlDAYWTsIkZqkHOUrBTkp3acWDPtxhzhYF1a=w633-h633-s-no-gm?authuser=0"
+          alt="Mecha" class="profile-pic" />
+        <h3>Kharissa Kurnia Mecha</h3>
+        <div class="details">
+          <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 30 Juni 2008</p>
+          <p><strong>Jenis Kelamin :</strong> Perempuan</p>
+          <p><strong>Agama :</strong> Islam</p>
+          <p><strong>Alamat :</strong> Pageruyung RT 3 RW 2 Pagergunung Pageruyung Kendal</p>
+          <a href="https://photos.app.goo.gl/axnya3uPsoxbj7N8A" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczNBu609XIhazgjYCpIEHWILumT3kVPX4elJ8W9HbZ3Q8M4yc78EQP3R3rNy6r0rzSHRmcCFh5dlOfzFGnNbK8xo6Wir6StwaDnx8H4fU8-1UWv-mSC2h7z0cMZGvncxn5pRbrVvRrP4tg0I-w5LiNms=w633-h633-s-no-gm?authuser=0"
+          alt="Marlina" class="profile-pic" />
+        <h3>Marlina Indah Sari</h3>
+        <div class="details">
+          <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 08 Maret 2008</p>
+          <p><strong>Jenis Kelamin :</strong> Perempuan</p>
+          <p><strong>Agama :</strong> Islam</p>
+          <p><strong>Alamat :</strong> Krajan RT 3 RW 4 Gebangan Pageruyung Kendal</p>
+          <a href="https://photos.app.goo.gl/LeGyyASdQ9d6iRpYA" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczN1WI2fVPRiJmHuoY8XyGbrRGAEE2ytRHfYM_-O-rMETOtZ9T1vgtYM19tFnrwiChU41SGTiZGLGiXBkMNe8VHXjY792N4oggv6EL1fq8BLUu4knPBfRw8eT_XLySMKmF_jwmjtTa93ysOlK8BidJoh=w475-h633-s-no-gm?authuser=0"
+          alt="Maulana" class="profile-pic" />
+        <h3>Maulana Jihaniyavi "stepen"</h3>
+        <div class="details">
+          <p><strong>Alamat :</strong> ngrowo,patean nek tak gowo abot</p>
+          <p><strong>Lahir :</strong> dari ibuk</p>
+          <p><strong>Cita-cita :</strong> istri 5</p>
+          <p><strong>Hobi :</strong> luru tobrut</p>
+          <a href="https://www.instagram.com/mmaauullaana?igsh=Z3V1bjBtaG5janI2" target="_blank">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@maulanajihaan" target="_blank">
+            <i class="bx bxl-tiktok"></i>
+          </a>
+          <a href="https://photos.app.goo.gl/nbrZBthDgMAUfVLk8" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczNhv0Mz6y1EsSSoliPryLBRFMrtcUywWXEt5Wc4U4abbahNyWJRZhVhTwcfBtdxVEZyhG7xNNqjcZTkFC9FwRFwlqOobaCE0c1PUoIhkqWKo5hBzi71fe6RZeB_UWlzGUAxNBtRauqjZG0TOK6VexaW=w633-h633-s-no-gm?authuser=0"
+          alt="Nalasari" class="profile-pic" />
+        <h3>Nalasari Aghniya</h3>
+        <div class="details">
+          <p>
+            <strong>Alamat :</strong> parakan sebaran, pageruyung (soon jadi
+            china)
+          </p>
+          <p><strong>Tanggal Lahir :</strong> 9 april 2008 ( kalo ga salah)</p>
+          <p><strong>Asal/Suku :</strong> jawa nyelll</p>
+          <p><strong>Suami :</strong> lee jeno, park jimin cihuyy</p>
+          <a href="https://www.instagram.com/nlaniylovee?igsh=enVuZm5qbDczdWNo" target="_blank">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@user904png?_t=8piTrFXsR5k&_r=1" target="_blank">
+            <i class="bx bxl-tiktok"></i>
+          </a>
+          <a href="https://photos.app.goo.gl/7buuA88Y94rCPjeCA" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczOggSVjZ7lK_8W_JVc9qkXo-66ZETnOTmjdo8XKi6gF7xhfq2bICklMF05_QDhK4uoOQr-CPZcXe036g0-sReach8x4VpS6nNOkVxM17zaq4_ceeHQV1o55OmgfZu7ODlYbT-60ZJoq64BRKI33qjfd=w633-h633-s-no-gm?authuser=0"
+          alt="Nayla" class="profile-pic" />
+        <h3>Nayla Karima Zahirannisa</h3>
+        <div class="details">
+          <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 14 Juli 2008</p>
+          <p><strong>Jenis Kelamin :</strong> Perempuan</p>
+          <p><strong>Agama :</strong> Islam</p>
+          <p><strong>Alamat :</strong> Bogosari RT 4 RW 1 Tambahrejo Pageruyung Kendal</p>
+          <a href="https://photos.app.goo.gl/AUSsCUaqEUfv2cuH6" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczMyxuUfvCwpNP_xFMubdgc1N9A2iMBDlZunoD2J-u-T-hW6sRrVa7v96ETWvn3YJlgCLAW-rE8f4HLaDqJL2N0AIssWNyj_VsXQEHg3o6HMPfP2s4NIQdqaCuBPPgVIw5MwmPIok5WJFxzxM9IaWQqr=w633-h633-s-no-gm?authuser=0"
+          alt="Naysilla" class="profile-pic" />
+        <h3>Naysilla Ramadhani</h3>
+        <div class="details">
+          <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 12 September 2008</p>
+          <p><strong>Jenis Kelamin :</strong> Perempuan</p>
+          <p><strong>Agama :</strong> Islam</p>
+          <p><strong>Alamat :</strong> Ngadiwarno RT 4 RW 1 Sukorejo Sukorejo Kendal</p>
+          <a href="https://photos.app.goo.gl/JVbmtf3CE5P8Jvf56" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczOosiegw3VJPNQ4RvQA19YH_LkCDin5GRPSksueoUrX0g_Mkr3e5DbR4NYjhEFwEt1jSAAm2EMcsSnM1KpLCvf4FXBblvhz4nWxjWwCM-avxR7a-uPhpA4KXWJmC18sb4fAaKfxSXOw6WxO0bhEBhyr=w633-h633-s-no-gm?authuser=0"
+          alt="Nessa" class="profile-pic" />
+        <h3>Nessa Mike Ardinasari</h3>
+        <div class="details">
+          <p><strong>Alamat :</strong> Sidomukti, Weleri</p>
+          <p><strong>Tanggal Lahir :</strong> 15 Desember 2007</p>
+          <p><strong>Cita-cita :</strong> jadi istri juragan sapi</p>
+          <p><strong>Status :</strong> jomblo</p>
+          <a href="https://www.instagram.com/nssamke?igsh=MWxkbHg5NWJid2I0Mg==">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@mkeeaaaa?_t=8px7oOQ6wiG&_r=1" target="_blank">
+            <i class="bx bxl-tiktok"></i>
+          </a>
+          <a href="https://photos.app.goo.gl/52yHpLXXW3zbKzEk7" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczPqHxLHCSD3uE3lWmpeSSFGbYgRY43tj4jUugd2Z0iQXukF2oI6ajfKkljcV2V7JoFim3swCNJjUMpvZylbdunoixjMU6IS-0pf0OuG5TdgOk6DMOeojefA7B7gPOBIyi69AdpGIa4aE2Ohx-wFkNX7=w633-h633-s-no-gm?authuser=0"
+          alt="Arga" class="profile-pic" />
+        <h3>Nur Alif Arga Prastia</h3>
+        <div class="details">
+          <p><strong>Tanggal Lahir :</strong> 22 Januari 2009</p>
+          <p><strong>Cita-cita :</strong> Programer</p>
+          <p><strong>ID Mobile legend :</strong> (947691037) Mabar gw roam</p>
+          <p><strong>Pasangan :</strong> Masih Kosong</p>
+          <a href="https://www.instagram.com/n_al_arg_setya?igsh=MXZ1MDRjMXYyMTR4Mw==" target="_blank">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@alifarga2201?_t=8piSHMXDr8L&_r=1" target="_blank">
+            <i class="bx bxl-tiktok"></i>
+          </a>
+          <a href="https://photos.app.goo.gl/D2kaZ4QsJ6214JKh7" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczMWHCv-BPpUNKWzEl8ec8HStN2ETDyqJZhswSikJ6S8ZccgotzzUt448s2O8rm6n3aGGlWYCabxiFyNQZUBXyj-OeaefEU8i3xzwXGepBB0vnrPspso0HoQ_RfDlbXx45GkumYKNNqt-uQpA6pfSlV4=w633-h633-s-no-gm?authuser=0"
+          alt="Putra" class="profile-pic" />
+        <h3>Putra Abdurrahman Muhammad</h3>
+        <div class="details">
+          <p><strong>Alamat :</strong> Weleri, Weleri</p>
+          <p><strong>Tanggal Lahir :</strong> 12 Februari 2008</p>
+          <p><strong>Asal/Suku :</strong> Jawa</p>
+          <p><strong>Pasangan :</strong> Kamu</p>
+          <a href="https://photos.app.goo.gl/syBS3aNVMgJhZscM6" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczNOFsKdVZ7L0JfQLwOfhrAuolIVMA_eXANLQrQN4cA1euMdAYjrGd8x9CfenhiY-SK14FpDFpNUn5l0OXcPAntz_8b2nKV1ZtZveTr9tm0yW7OencnQ6KbhO-0Rh6CGtCpkHKcd-QEdsAk_RkNYclD6=w633-h633-s-no-gm?authuser=0"
+          alt="Ella" class="profile-pic" />
+        <h3>Risma Ella widayanti</h3>
+        <div class="details">
+          <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 14 Juni 2008</p>
+          <p><strong>Jenis Kelamin :</strong> Perempuan</p>
+          <p><strong>Agama :</strong> Islam</p>
+          <p><strong>Alamat :</strong> Jl. Misman RT 2 RW 1 Tampingwinarno Sukorejo Kendal</p>
+          <a href="https://photos.app.goo.gl/Jk3vbpLYGtQ2YyLq7" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczMML30WjB-uAUe61UilKuSwuE1m9EbL-LGKzDmCFQFmd_aZ3gBCjiy_8j8HPpZBqulZ8RxOXt_Ff5CMdnS1ZTnqntZoH3yqCFZBu-Mqv7Xqm6CUr_-vXkcpoETawJZyI2_5j30hxhH6FGGobK4CdX0g=w633-h633-s-no-gm?authuser=0"
+          alt="Risti" class="profile-pic" />
+        <h3>Risti Munthoharoh</h3>
+        <div class="details">
+          <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 30 September 2007</p>
+          <p><strong>Jenis Kelamin :</strong> Perempuan</p>
+          <p><strong>Agama :</strong> Islam</p>
+          <p><strong>Alamat :</strong> Tempel RT 4 RW 1 Petung Pageruyung Kendal</p>
+          <a href="https://photos.app.goo.gl/fbUH3kwdEaX3Fnu69" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczNht6nf1wuBo8kI_lq71aAKuRJFEEsnno5fQmBjnpntLRs5jeaftTkeWLn5cJub6K0qQpDK0-2AmOpC_65qftnpvA7Y37hdri_lyq9LK8LmU09-sRlxiZI4QjepBycrlbSpU3hneJO11JH-3H5pibnp=w284-h284-s-no-gm?authuser=0"
+          alt="Rofiatun" class="profile-pic" />
+        <h3>Rofiatun</h3>
+        <div class="details">
+          <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 26 November 2008</p>
+          <p><strong>Jenis Kelamin :</strong> Perempuan</p>
+          <p><strong>Agama :</strong> Islam</p>
+          <p><strong>Alamat :</strong> Damarjati RT 10 RW 2 Damarjati Sukorejo Kendal</p>
+          <a href="https://photos.app.goo.gl/kSz56WjCWJS8Zqrk6" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczNjD4Z8HOgNYcKKK-GKbt2eL92MraUk5ulki6XObgmE8P3-rpRqni1nxre_JaN78Tt3Ap3M0jD-GWVOF_k9f_TiMnYstz-9A5gPxg7iTgouiPGtDGAmAKUF3n3H7xjyQ6kD1BOhL3A34Ix4i7V0-OFs=w576-h569-s-no-gm?authuser=0"
+          alt="Vina" class="profile-pic" />
+        <h3>Vina Layinatu Syifa</h3>
+        <div class="details">
+          <p>
+            <strong>Alamat :</strong> bumi tp pgn pindah ke mars soalny org
+            bumi gaje
+          </p>
+          <p>
+            <strong>Tanggal Lahir :</strong> gaperlu tau, paling jg ga
+            ngucapin(27 Juni 2008)
+          </p>
+          <p>
+            <strong>KataÂ² :</strong> klo hidupmu bnyk msalh, y uda nmny jg
+            hidup kocak
+          </p>
+          <p><strong>Pacar :</strong> Na Jaemin (dan masih ada 50 lainyaðŸ˜ˆ)</p>
+          <p><strong>Reminder:</strong> don't skip a meal -Na Jaemin</p>
+          <a href="https://www.instagram.com/vvv_naacsj?igsh=MWw4NTUybXN4YTh3ag==" target="_blank">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@cccnasyf?_t=8piSIyMMlRS&_r=1" target="_blank">
+            <i class="bx bxl-tiktok"></i>
+          </a>
+          <a href="https://photos.app.goo.gl/ZiUbTjYpiEjhmXaa8" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczPMQm6pfORH8ZTCCyCTjS8FUvq5y3TvcKCPtOotMsOvFNxRzqVNAAVv1eeSmOIGnq3Y6nUyAEXIIjN_NXAiHrugULd07lrnqYWw8QqNqwwWQRcPMetZfRmH0nHRefLb0jom_qJmkHxkLzbdywnRS_wT=w633-h633-s-no-gm?authuser=0"
+          alt="Widya" class="profile-pic" />
+        <h3>Widya Anindita</h3>
+        <div class="details">
+          <p><strong>Alamat :</strong> patean</p>
+          <p><strong>Tanggal Lahir :</strong> may</p>
+          <p><strong>Hobi :</strong> bantai elit cs, sayangâ€™in zaim, masakk</p>
+          <p>
+            <strong>[12.05.48â€¯PM] ðŸ’— :</strong> walaupun nonong tetap cantik
+          </p>
+          <a href="https://www.instagram.com/vviiindy?igsh=MW9yaXdxaTY4dGR4ag==" target="_blank">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@nnaindy?_t=8pk8mIdU8yW&_r=1" target="_blank">
+            <i class="bx bxl-tiktok"></i>
+          </a>
+          <a href="https://photos.app.goo.gl/NsSds3zi5vi4D3ik6" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
+      <!-- Ulangi blok ini untuk setiap murid -->
+      <div class="card" onclick="toggleDetails(this)">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczOdMIPcTxZn5S9x2N_ZZIn9JH5wh7SMQATXm5NjxUn1qN_XXuNg2kD__7O9fVnE00ApK_msoX_GkM_9V5LBFUBwft3OsCy6c_H2z3IhR-Q7l2ny29yHWH_czBajSV4Z5q4hiKljBbwBZWnroLWxj_iX=w633-h633-s-no-gm?authuser=0"
+          alt="Yulia" class="profile-pic" />
+        <h3>Yulia Deviani</h3>
+        <div class="details">
+          <p><strong>Tempat Tanggal Lahir :</strong> Kendal, 29 Oktober 2007</p>
+          <p><strong>Jenis Kelamin :</strong> Perempuan</p>
+          <p><strong>Agama :</strong> Islam</p>
+          <p><strong>Alamat :</strong> Kiringan RT 4 RW 6 Trimulyo Sukorejo Kendal</p>
+          <a href="https://photos.app.goo.gl/UifPBxBBoWj5AYVB7" target="_blank">
+            <i class="bx bx-images"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Akhiri blok -->
     </div>
+  </section>
 
-    <!-- Ionicons script -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.4/ionicons/ionicons.esm.js"
-      type="module"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.4/ionicons/ionicons.js"
-      nomodule
-    ></script>
-    <!-- js -->
-    <script type="module" src="js/scripts.js"></script>
-    <script src="js/script.js"></script>
-  </body>
+  <!-- Icon Chat -->
+  <div id="chat-icon">
+    <i class="bx bx-chat"></i>
+  </div>
+
+  <!-- Chat Popup -->
+  <div id="chat-popup" class="hidden">
+    <div class="chat-container">
+      <div class="chat-header">
+        <h2>Chat</h2>
+      </div>
+      <div id="chat-output" class="chat-output"></div>
+      <div class="chat-input-container">
+        <input type="text" id="name-input" placeholder="Masukkan nama" />
+        <textarea id="message-input" placeholder="Masukkan pesan" rows="3"></textarea>
+        <button id="send-btn">
+          <i class="bx bx-send"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- js -->
+  <script type="module" src="js/scripts.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
 </html>
-
-
-
-
