@@ -6,102 +6,87 @@ Website statis interaktif untuk memperkenalkan kelas Rekayasa Perangkat Lunak 1 
 - **Repository**: kloning lokal dari arsip GitHub Classroom RPL 1
 
 ## Ringkasan Proyek
-- Berbasis HTML, CSS, dan JavaScript murni dengan pola komponen sederhana.
-- Menggunakan Firebase Firestore sebagai backend serverless untuk fitur chat real-time.
-- Menonjolkan estetika gelap bertema galaksi dengan glassmorphism, animasi halus, serta optimasi penggunaan warna primer `#0db9d7`.
-- Seluruh halaman berbagi _navbar_ dan _footer_ konsisten melalui reuse stylesheet `style.css` dan skrip utilitas `js/script.js`.
+- Berbasis HTML, CSS, dan JavaScript ES6 modular dengan pola komponen mandiri.
+- Menggunakan Firebase Firestore sebagai backend serverless untuk fitur chat real-time dan Firebase Auth untuk login Google.
+- Menonjolkan estetika gelap bertema galaksi dengan glassmorphism, animasi cerdas, kustomisasi kursor, serta optimasi warna sekunder dan premier.
+- Seluruh halaman berbagi _navbar_ dan _footer_ konsisten melalui stylesheet `style.css` dengan logo baru berbasis gambar, yang menggantikan teks konvensional.
 
 ## Detail Fitur
-- **Navigasi Responsif**
-  - _Navbar_ kaca transparan dengan efek blur (`backdrop-filter`) dan highlight tautan aktif otomatis (`js/script.js` baris 33–42).
+
+- **Navigasi & Interaksi Visual Responsif**
+  - _Navbar_ kaca transparan dengan efek blur (`backdrop-filter`) dan logo berbasis grafis webp yang menyusut presisi di seluruh layar.
   - Mode hamburger diaktifkan pada lebar layar sempit, menampilkan menu geser dengan transisi halus.
-  - Ikon sosial TikTok dan Instagram dengan _hover state_ kustom (`style.css` baris 54–78).
+  - **Kursor Pena Kustom (Intelligent Cursor)**: Kursor mendeteksi elemen secara dinamis (berubah menjadi i-beam bersinar pada teks, ikon panah 4 arah pada model 3D, membesar ketika mengklik, dan memancarkan kilau emas saat di atas tombol interaktif) via `js/cursor.js`.
 
 - **Beranda (`index.html`)**
-  - Hero section adaptif dengan judul dinamis dan ilustrasi kelas (`Aset/Home.png`).
-  - Tombol `Dapatkan Motivasi!` memunculkan _popup_ motivasi yang memanfaatkan overlay gelap dan tombol tutup (`showQuote()` & `closePopup()`).
-  - Ikon chat melayang muncul di seluruh halaman, dianimasikan dengan keyframes `bounce-in-top`, menjaga visibilitas tanpa mengganggu konten.
+  - Hero section dengan hitung mundur kelulusan (`js/countdown.js`), dihiasi oleh animasi teks bergantian menggunakan Typed.js yang mengambil kutipan nostalgia dari `js/config.js`.
+  - **Model 3D Topi Kelulusan**: Interaksi 3D langsung di halaman beranda yang ditenagai oleh _Three.js_ (`js/graduation3d.js`). Pengunjung dapat memutar, memperbesar, dan bermain dengan topi kelulusan.
+  - Efek partikel bertema bintang-bintang ruang angkasa yang tampil otomatis.
 
 - **Tentang Kami (`aboute.html`)**
-  - Narasi lengkap mengenai profil kelas, jumlah siswa, hingga peran wali kelas.
-  - Foto kelas resolusi tinggi dari Google Photos serta _embed_ Google Maps interaktif untuk lokasi sekolah (`iframe` dengan `loading="lazy"`).
-  - Menggandeng ulang komponen chat untuk konsistensi pengalaman pengguna lintas halaman.
+  - Narasi mendalam mengenai sejarah kelas Angkatan 17, jumlah siswa, hingga memori berharga tentang almarhumah sahabat kami, diakhiri dengan linimasa kelulusan.
+  - **Slideshow Nostalgia**: Sistem carousel mulus (fade in-out 1.5 detik) yang mengambil koleksi foto berkualitas HD (1920x1080) secara otomatis dari `Fotbar.txt`, menggunakan _Image Preloading_ agar tidak terjadi lagging gambar.
+  - _Embed_ Google Maps interaktif untuk lokasi sekolah.
 
 - **Wali & Siswa (`walisiswa.html`)**
-  - Kartu wali kelas dan 36 siswa dengan foto profil, biodata, serta tautan personal (Instagram, TikTok, Google Photos).
-  - Klik kartu men-trigger fungsi `toggleDetails` yang mengatur visibilitas detail tanpa _page refresh_.
-  - Struktur DOM disiapkan untuk modal detail (`#details-modal`) sebagai peningkatan di masa depan.
-  - Penamaan kelas CSS memanfaatkan `card`, `profile-pic`, `details` untuk memudahkan styling grid responsif.
+  - Kartu wali kelas dan 36 siswa dirender secara dinamis melalui data JSON (`data/students.json` via `js/renderStudents.js`), lengkap dengan foto profil, biodata, serta tautan personal (Instagram, TikTok).
+  - Modal detail interaktif untuk menampilkan profil siswa secara penuh tanpa _page refresh_.
 
 - **Galeri Kelas (`gallery.html`)**
   - Ratusan dokumentasi kegiatan dipetakan per bulan (`.month-title`) agar mudah dinavigasi.
-  - Klik foto membuka modal layar penuh dengan tombol `prev/next`, dukungan tombol keyboard (`ArrowLeft/Right`, `Esc`), serta navigasi sirkular (`openModal()`).
-  - Modal memanfaatkan satu elemen `#imageModal` sehingga ringan meskipun jumlah gambar besar.
+  - Klik foto membuka modal layar penuh dengan dukungan lightbox.
 
-- **Chat Real-time**
-  - Komponen chat dibangun menggunakan Firebase App & Firestore SDK modular (`js/scripts.js`).
-  - Pesan tersimpan pada koleksi `chats` dengan field `name`, `message`, `timestamp`.
-  - `onSnapshot` memantau perubahan secara live, memformat waktu menggunakan `date-fns` (`format(date, 'dd MMM yyyy HH:mm')`).
-  - Validasi sederhana memastikan nama & pesan tidak kosong dan memberi notifikasi ketika input belum lengkap.
-  - UI chat terdiri dari `chat-icon`, `chat-popup`, dan `chat-container` dengan tampilan kaca, scrollbar kustom, serta status tersembunyi otomatis ketika area luar diklik.
-
-- **Pengalaman Pengguna & Aksesibilitas**
-  - Palet warna berkontras tinggi antara latar gelap dan teks terang untuk keterbacaan.
-  - Semua gambar memiliki atribut `alt`, meningkatkan aksesibilitas dan SEO.
-  - Layout responsive melalui flexbox dan media query untuk tablet & smartphone (`style.css` bagian `@media`).
+- **Chat Real-time dengan Autentikasi**
+  - Komponen chat dibangun menggunakan Firebase App, Firestore, & Auth (`js/scripts.js` dan `js/config.js`).
+  - **Autentikasi Google**: Hanya pengguna yang login menggunakan Google Account yang dapat mengirim pesan. Identitas (Nama dan Foto Profil) disematkan otomatis ke setiap pesan.
+  - **Hak Akses Admin**: Administrator dapat menghapus pesan spesifik tanpa perlu memuat ulang halaman.
+  - **Auto-scroll Cerdas**: Jendela percakapan akan _scroll_ otomatis saat pesan baru tiba, tetapi akan menahan posisi (tetap diam) saat pengguna sedang melihat riwayat obrolan masa lalu (scroll di tengah).
+  - Tampilan UI bubble chat modern (seperti WhatsApp) dengan pemisahan warna kuning untuk pesan sendiri dan warna toska untuk pesan orang lain.
 
 ## Teknologi & Dependensi
-- **Frontend**: HTML5, CSS3 (flexbox, grid, custom properties), JavaScript ES6.
-- **UI Libraries**: Google Fonts (Poppins), Ionicons 5.5, animasi CSS kustom.
-- **Backend**: Firebase Firestore (client-side SDK 10.14.0).
-- **Utilitas**: `date-fns` v2.28 untuk format tanggal.
-- **Aset**: Kumpulan foto dan icon internal pada folder `Aset/` dan `favicon_io/`.
+- **Frontend**: HTML5, CSS3, JavaScript ES6 (Modular).
+- **UI & 3D Libraries**: Three.js, Typed.js, Google Fonts (Poppins), Ionicons 5.5.
+- **Backend & Auth**: Firebase Firestore & Firebase Auth (SDK 10.14.0).
+- **Aset**: Kumpulan foto HD dari Google Photos API, _Model GLB (Aset/graduation_hat.glb)_, dan logo SVG/WebP.
 
 ## Struktur Direktori
-```
+```text
 Website-RPL1-Skema--main/
-├── index.html             # Laman utama
-├── aboute.html            # Profil kelas dan lokasi sekolah
-├── walisiswa.html         # Data wali kelas & siswa
+├── index.html             # Laman utama & Integrasi 3D
+├── aboute.html            # Profil, cerita angkatan, & Slideshow
+├── walisiswa.html         # Data wali kelas & siswa (Dynamic Rendering)
 ├── gallery.html           # Arsip foto kegiatan kelas
-├── style.css              # Styling global dan responsif
+├── style.css              # Styling global, glassmorphism, & responsif
+├── Fotbar.txt             # Basis data URL Foto Slideshow
 ├── js/
-│   ├── script.js          # Navigasi, popup motivasi, gallery modal, toggle kartu
-│   └── scripts.js         # Integrasi Firebase, logika chat real-time
-├── Aset/                  # Gambar dan ilustrasi lokal
-├── favicon_io/            # Berkas favicon & manifest
-└── README.md
+│   ├── animations.js      # Animasi elemen DOM (scroll reveal, parallax)
+│   ├── config.js          # Konfigurasi Firebase, Kunci Admin, dan kutipan teks
+│   ├── countdown.js       # Penghitung mundur kelulusan
+│   ├── cursor.js          # Kursor kustom dan state deteksi hover
+│   ├── effects.js         # Efek partikel & canvas
+│   ├── graduation3d.js    # Konfigurasi dan controller Three.js
+│   ├── renderStudents.js  # Generator profil dari data JSON
+│   ├── script.js          # Navigasi, popup motivasi, gallery modal
+│   └── scripts.js         # Inti Firebase (Auth, Chat Firestore, Logika DOM Chat)
+├── data/                  # Berkas penyimpanan JSON
+├── Aset/                  # Gambar, Logo, dan 3D Models (.glb) lokal
+└── README.md              # Dokumentasi ini
 ```
 
 ## Menjalankan Secara Lokal
 1. Kloning atau ekstrak repositori ini.
-2. Buka berkas `index.html` menggunakan peramban modern (Chrome, Edge, Firefox).
-3. Untuk pengalaman terbaik gunakan ekstensi seperti Live Server atau jalankan server statis:
+2. Karena menggunakan fitur ES6 Module (`import/export`) dan Fetch API, website **tidak bisa** berjalan sempurna dengan sistem double-klik langsung pada file `index.html`.
+3. Anda **wajib** menggunakan server lokal. Contoh menggunakan _Live Server_ (VS Code) atau Python:
    ```bash
-   # Contoh menggunakan Python
    python -m http.server 8000
    ```
    Lalu akses `http://localhost:8000`.
-4. Pastikan koneksi internet aktif agar Firebase, Google Fonts, Ionicons, dan gambar Google Photos dapat dimuat.
-
-## Konfigurasi Chat & Firebase
-- Konfigurasi default menggunakan proyek Firebase publik `rplsatu026-4f987`.
-- Untuk menggunakan proyek Firebase lain:
-  1. Buat project di [Firebase Console](https://console.firebase.google.com/) dan aktifkan Firestore.
-  2. Salin konfigurasi web app baru dan gantikan objek `firebaseConfig` pada `js/scripts.js`.
-  3. Pastikan aturan keamanan Firestore disesuaikan (misal, menambahkan autentikasi atau validasi tambahan).
+4. Pastikan koneksi internet aktif agar modul eksternal Firebase, Three.js, dan CDN Google Photos dapat dimuat.
 
 ## Pengembang
-- [Brillian Yusuf Sejati](https://github.com/bys2007) — Membuat rancangan website dan UI/UX galeri serta sistem backend (Firebase).
-- [Dimar Nur Arifin](https://github.com/dim-na) — Pembuat kerangka awal termasuk responsivitas dan desain kartu profil.
-- [Nur Alif Arga Prastia](https://github.com/arga998) — Pengelola database (Google Drive & Photos).
-
-## Status & Rencana Lanjut
-- ✅ Versi saat ini: rilis statis dengan integrasi chat real-time.
-- 🔄 Rencana pengembangan (usulan):
-  1. Menambahkan autentikasi dasar untuk chat (mis. token kelas).
-  2. Mengoptimalkan pemuatan galeri dengan _lazy loading_ tambahan.
-  3. Memecah CSS menjadi modul per halaman untuk maintainability.
+- [Brillian Yusuf Sejati](https://github.com/bys2007) — Architect UI/UX, integrasi Backend (Firebase & Auth), Interaksi 3D, Custom Kursor, dan DOM logic.
+- [Dimar Nur Arifin](https://github.com/dim-na) — Pembuat kerangka awal, responsivitas, dan struktur database profil.
+- [Nur Alif Arga Prastia](https://github.com/arga998) — Pengelola media dan basis data tautan dinamis.
 
 ## Lisensi
-Lisensi belum ditentukan. Harap hubungi tim pengembang sebelum menggunakan aset atau kode di luar kepentingan pembelajaran.
+Hak cipta milik Kelas RPL 1 Angkatan 17 SMK Negeri 5 Kendal. Harap hubungi tim pengembang sebelum menggunakan aset atau kode untuk kepentingan di luar sekolah.

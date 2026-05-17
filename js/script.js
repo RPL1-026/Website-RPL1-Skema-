@@ -1,114 +1,78 @@
-// toggle class active
+// ============================================
+// Global Script — Navbar, Gallery, Toggle
+// ============================================
+
+// Toggle class active (hamburger menu)
 const navbarNav = document.querySelector('.navbar-nav');
-
-// hamburger menu di klik
-document.querySelector('#hamburger-menu').onclick = () => {
-  navbarNav.classList.toggle('active');
-};
-
-// klik diluar sidebar
 const hamburger = document.querySelector('#hamburger-menu');
-document.addEventListener('click', function(e) {
-if(!hamburger.contains(e.target) && !navbarNav.contains(e.target)) {
-  navbarNav.classList.remove('active');
+
+if (hamburger) {
+  hamburger.onclick = () => navbarNav.classList.toggle('active');
 }
+
+// Close sidebar on outside click
+document.addEventListener('click', function(e) {
+  if (hamburger && navbarNav && !hamburger.contains(e.target) && !navbarNav.contains(e.target)) {
+    navbarNav.classList.remove('active');
+  }
 });
 
-// Button Motivation
-const quotes = [
-  "Motivasi adalah ilusi sesaat yang datang dan pergi, tetapi hanya dengan disiplin, seseorang mampu melampaui batas dan menjadikan tujuan sebagai kenyataan.",
-];
-
-function showQuote() {
-  const quoteText = document.getElementById("quoteText");
-  const quotePopup = document.getElementById("quotePopup");
-
-  quoteText.textContent = quotes[0];
-  quotePopup.classList.add("show");
-}
-
-function closePopup() {
-  const quotePopup = document.getElementById("quotePopup");
-  quotePopup.classList.remove("show");
-}
-
-// mark page
+// Mark active page
 document.querySelectorAll('.navbar .navbar-nav a').forEach(link => {
   if (link.href === window.location.href) {
     link.classList.add('active');
   }
 });
 
+// Toggle details on student cards
+function toggleDetails(card) {
+  const details = card.querySelector('.details');
+  if (!details) return;
+  const isVisible = details.style.display === 'block';
+  document.querySelectorAll('.details').forEach(d => d.style.display = 'none');
+  details.style.display = isVisible ? 'none' : 'block';
+}
+// Make globally available
+window.toggleDetails = toggleDetails;
 
-// JavaScript untuk toggle details 
-        function toggleDetails(card) {
-            const details = card.querySelector('.details');
-            const isVisible = details.style.display === 'block';
-            document.querySelectorAll('.details').forEach(detail => detail.style.display = 'none');
-            details.style.display = isVisible ? 'none' : 'block';
-        }
+// Gallery modal (only if gallery elements exist)
+const galleryItems = document.querySelectorAll(".gallery-item img");
+if (galleryItems.length) {
+  let currentIndex = 0;
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("imgModal");
+  const captionText = document.getElementById("caption");
 
-// Dapatkan semua item gallery dan tambahkan event listener
-var galleryItems = document.querySelectorAll(".gallery-item img");
-var currentIndex = 0;
-var modal = document.getElementById("imageModal");
-var modalImg = document.getElementById("imgModal");
-var captionText = document.getElementById("caption");
-
-galleryItems.forEach(function(item, index) {
-  item.addEventListener("click", function() {
-    currentIndex = index; // Set index saat gambar diklik
-    openModal(currentIndex);
+  galleryItems.forEach(function(item, index) {
+    item.addEventListener("click", function() {
+      currentIndex = index;
+      openModal(currentIndex);
+    });
   });
-});
 
-function openModal(index) {
-  modal.style.display = "block";
-  modalImg.src = galleryItems[index].src; // Set gambar modal dengan gambar yang diklik
-  captionText.innerHTML = galleryItems[index].alt; // Set caption gambar
-}
-
-// Tombol close untuk menutup modal
-var span = document.getElementsByClassName("close")[0];
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// Tombol "Sebelumnya"
-var prev = document.getElementsByClassName("prev")[0];
-prev.onclick = function() {
-  currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length; // Pindah ke gambar sebelumnya
-  openModal(currentIndex);
-}
-
-// Tombol "Selanjutnya"
-var next = document.getElementsByClassName("next")[0];
-next.onclick = function() {
-  currentIndex = (currentIndex + 1) % galleryItems.length; // Pindah ke gambar selanjutnya
-  openModal(currentIndex);
-}
-
-// Menutup modal jika user mengklik di luar gambar
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+  function openModal(index) {
+    if (!modal || !modalImg) return;
+    modal.style.display = "block";
+    modalImg.src = galleryItems[index].src;
+    if (captionText) captionText.innerHTML = galleryItems[index].alt;
   }
-}
 
-// Event listener untuk keyboard navigation
-document.addEventListener("keydown", function(event) {
-  if (modal.style.display === "block") {
-    if (event.key === "ArrowLeft" || event.key === "a" || event.key === "A") {
-      // Navigasi ke kiri (gambar sebelumnya)
-      currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-      openModal(currentIndex);
-    } else if (event.key === "ArrowRight" || event.key === "d" || event.key === "D") {
-      // Navigasi ke kanan (gambar selanjutnya)
-      currentIndex = (currentIndex + 1) % galleryItems.length;
-      openModal(currentIndex);
-    } else if (event.key === "Escape") {
-      // Menutup modal saat tombol Escape ditekan
-      modal.style.display = "none";
+  const span = document.getElementsByClassName("close")[0];
+  if (span) span.onclick = () => modal.style.display = "none";
+
+  const prev = document.getElementsByClassName("prev")[0];
+  if (prev) prev.onclick = () => { currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length; openModal(currentIndex); };
+
+  const next = document.getElementsByClassName("next")[0];
+  if (next) next.onclick = () => { currentIndex = (currentIndex + 1) % galleryItems.length; openModal(currentIndex); };
+
+  window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; };
+
+  document.addEventListener("keydown", (e) => {
+    if (modal && modal.style.display === "block") {
+      if (e.key === "ArrowLeft" || e.key === "a" || e.key === "A") { currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length; openModal(currentIndex); }
+      else if (e.key === "ArrowRight" || e.key === "d" || e.key === "D") { currentIndex = (currentIndex + 1) % galleryItems.length; openModal(currentIndex); }
+      else if (e.key === "Escape") modal.style.display = "none";
     }
-  }
-});
+  });
+}

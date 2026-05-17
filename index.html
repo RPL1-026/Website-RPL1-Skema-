@@ -6,9 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>rplone026</title>
 
-  <link rel="icon" type="image/ico" href="favicon_io\favicon.ico">
-  <link rel="manifest" href="favicon_io\site.webmanifest">
-  <meta property="og:image" content="https://rpl1-026.github.io/Website-RPL1-Skema-/Aset/image.webp">
+  <link rel="icon" type="image/ico" href="favicon_io/favicon.ico">
+  <link rel="manifest" href="favicon_io/site.webmanifest">
+
+  <!-- Metadata untuk media sosial (Open Graph) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rpl1-026.github.io/Website-RPL1-Skema-">
+  <meta property="og:title" content="RPL 1 - 026">
+  <meta property="og:description"
+    content="The official website for the 17th batch, class RPL 1 (Software Engineering), graduating in 2026, at SMK Negeri 5 Kendal.">
+  <meta property="og:image" content="https://rpl1-026.github.io/Website-RPL1-Skema-/Aset/logo.webp">
+
+  <!-- Metadata Twitter (opsional, tapi bagus untuk konsistensi) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://rpl1-026.github.io/Website-RPL1-Skema-">
+  <meta name="twitter:title" content="RPL 1 - 026">
+  <meta name="twitter:description"
+    content="The official website for the 17th batch, class RPL 1 (Software Engineering), graduating in 2026, at SMK Negeri 5 Kendal.">
+  <meta name="twitter:image" content="https://rpl1-026.github.io/Website-RPL1-Skema-/Aset/logo.webp">
+
+  <link rel="canonical" href="https://rpl1-026.github.io/Website-RPL1-Skema-">
 
   <!-- font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,14 +36,26 @@
   <!-- Boxicons -->
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
+
+
   <!-- css -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Three.js Import Map -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
 </head>
 
 <body>
   <!-- navbar start-->
   <nav class="navbar">
-    <a href="#" class="navbar-logo">RPL<span>1</span>.</a>
+    <a href="#" class="navbar-logo"><img src="Aset/logo.webp" alt="RPL 1" /></a>
     <div class="navbar-nav">
       <a href="index.html">Beranda</a>
       <a href="aboute.html">Tentang Kami</a>
@@ -53,25 +82,31 @@
   </nav>
   <!-- navbar end -->
 
-  <!-- hero section start-->
-  <section class="hero" id="home">
-    <main class="content">
-      <h1>Selamat Datang di Website <span style="font-style: italic; color: #0db9d7;">RPL1</span></h1>
-      <a href="#" class="button" onclick="showQuote()">Dapatkan Motivasi!</a>
-    </main>
-    <div class="homeimg">
-      <img src="Aset\Home.png" alt="RPL">
-    </div>
-  </section>
-  <!-- hero section end-->
+  <!-- Full viewport container for hero + quotes -->
+  <div class="hero-viewport">
 
-  <!-- Motivational Pop-up -->
-  <div id="quotePopup" class="popup">
-    <div class="popup-content">
-      <p id="quoteText"></p>
-      <button class="close-btn" onclick="closePopup()">Tutup</button>
-    </div>
+    <!-- hero section -->
+    <section class="hero" id="home">
+      <main class="content">
+        <h1>Selamat Datang di Website <span style="font-style: italic; color: #0db9d7;">RPL1</span></h1>
+        <div id="countdown-display" class="countdown-container"></div>
+      </main>
+      <div class="homeimg">
+        <div id="graduation-3d"></div>
+      </div>
+    </section>
+
+    <!-- Typed.js quotes -->
+    <section class="typed-section">
+      <div class="typed-wrapper">
+        <span id="typed-output"></span>
+      </div>
+    </section>
+
   </div>
+
+  <!-- particles background (for starfield effect after 30 days) -->
+  <div id="particles-bg"></div>
 
   <!-- Icon Chat -->
   <div id="chat-icon">
@@ -83,20 +118,77 @@
     <div class="chat-container">
       <div class="chat-header">
         <h2>Chat</h2>
+        <div id="auth-container">
+          <button id="google-login-btn" class="google-login-btn">
+            <i class="bx bxl-google"></i> Login
+          </button>
+          <div id="user-info" class="user-info" style="display:none">
+            <img id="user-avatar" class="user-avatar" src="" alt="" referrerpolicy="no-referrer" />
+            <span id="user-name"></span>
+            <button id="logout-btn" class="logout-btn"><i class="bx bx-log-out"></i></button>
+          </div>
+        </div>
       </div>
       <div id="chat-output" class="chat-output"></div>
       <div class="chat-input-container">
-        <input type="text" id="name-input" placeholder="Masukkan nama" />
-        <textarea id="message-input" placeholder="Masukkan pesan" rows="3"></textarea>
-        <button id="send-btn">
+        <textarea id="message-input" placeholder="Login untuk mengirim pesan..." rows="3" disabled></textarea>
+        <button id="send-btn" disabled>
           <i class="bx bx-send"></i>
         </button>
       </div>
     </div>
   </div>
 
-  <!-- js -->
+  <!-- CDN Scripts -->
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+  <!-- Chat (Firebase module) -->
   <script type="module" src="js/scripts.js"></script>
+
+  <!-- Feature modules -->
+  <script type="module">
+    import { initCountdown } from './js/countdown.js';
+    import { initGraduation3D } from './js/graduation3d.js';
+    import { initEffects } from './js/effects.js';
+    import { initCursor } from './js/cursor.js';
+    import { CONFIG } from './js/config.js';
+
+    // ES modules are deferred — DOM is always ready when they run
+
+    initCountdown();
+    initEffects();
+    initCursor();
+    initGraduation3D();
+
+    // Typed.js — init immediately since CDN scripts loaded before modules
+    function initTyped() {
+      const el = document.getElementById('typed-output');
+      if (window.Typed && el) {
+        new Typed('#typed-output', {
+          strings: CONFIG.TYPED_QUOTES,
+          typeSpeed: 30,
+          backSpeed: 15,
+          backDelay: 4000,
+          startDelay: 1500,
+          loop: true,
+          showCursor: true,
+          cursorChar: '|'
+        });
+      }
+    }
+
+    // Try now, retry on load if CDN not ready
+    if (window.Typed) {
+      initTyped();
+    } else {
+      window.addEventListener('load', initTyped);
+    }
+  </script>
+
+  <!-- Global script (navbar, gallery, etc) -->
   <script src="js/script.js"></script>
 </body>
 
