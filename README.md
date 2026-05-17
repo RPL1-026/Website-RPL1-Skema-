@@ -89,4 +89,4 @@ Website-RPL1-Skema--main/
 - [Nur Alif Arga Prastia](https://github.com/arga998) — Pengelola media dan basis data tautan dinamis.
 
 ## Lisensi
-Hak cipta milik Kelas RPL 1 Angkatan 17 SMK Negeri 5 Kendal. Harap hubungi tim pengembang sebelum menggunakan aset atau kode untuk kepentingan di luar sekolah.
+Hak cipta © Kelas RPL 1 Angkatan 17 SMK Negeri 5 Kendal. Karya ini dirilis di bawah lisensi CC BY-NC-SA 4.0. Silakan gunakan, pelajari, dan kembangkan aset atau kode ini untuk keperluan belajar mengajar atau proyek sekolah. Untuk penggunaan komersial di luar lingkungan sekolah, harap hubungi tim pengembang.
