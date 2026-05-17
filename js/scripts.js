@@ -2,6 +2,12 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/fireba
 import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, serverTimestamp, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
 import { getAuth, signInWithPopup, signInWithRedirect, getRedirectResult, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js";
 import { CONFIG } from './config.js';
+import { initEffects } from './effects.js';
+import { initCursor } from './cursor.js';
+
+// Init global visual features
+initEffects();
+initCursor();
 
 // Initialize Firebase
 const app = initializeApp(CONFIG.FIREBASE);

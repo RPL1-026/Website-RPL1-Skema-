@@ -50,6 +50,13 @@
     }
   }
   </script>
+    <!-- Instant Nostalgia Filter -->
+    <script>
+      if (localStorage.getItem('nostalgia_active') === 'true') {
+        var filter = localStorage.getItem('nostalgia_filter') || 'sepia(0.15) grayscale(0.25) brightness(0.9)';
+        document.write('<style id="nostalgia-style">html::before { content: ""; position: fixed; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; z-index: 99990; backdrop-filter: ' + filter + '; -webkit-backdrop-filter: ' + filter + '; }</style>');
+      }
+    </script>
 </head>
 
 <body>
@@ -152,15 +159,11 @@
   <script type="module">
     import { initCountdown } from './js/countdown.js';
     import { initGraduation3D } from './js/graduation3d.js';
-    import { initEffects } from './js/effects.js';
-    import { initCursor } from './js/cursor.js';
     import { CONFIG } from './js/config.js';
 
     // ES modules are deferred — DOM is always ready when they run
 
     initCountdown();
-    initEffects();
-    initCursor();
     initGraduation3D();
 
     // Typed.js — init immediately since CDN scripts loaded before modules

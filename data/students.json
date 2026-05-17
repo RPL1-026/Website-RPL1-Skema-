@@ -182,8 +182,13 @@
         }
       ],
       "greyscale": false,
-      "alt": "Brillian",
+      "alt": "bys",
       "socials": [
+        {
+          "icon": "bxl-github",
+          "url": "https://github.com/bys2007",
+          "type": "github"
+        },
         {
           "icon": "bxl-instagram",
           "url": "https://www.instagram.com/bys.2007/",
@@ -256,6 +261,11 @@
       "greyscale": false,
       "alt": "Dimar",
       "socials": [
+        {
+          "icon": "bxl-github",
+          "url": "https://github.com/dim-na",
+          "type": "github"
+        },
         {
           "icon": "bxl-instagram",
           "url": "https://www.instagram.com/dimar.na?igsh=cDgyeW9qbWFtcHFi",
@@ -1022,6 +1032,11 @@
       "greyscale": false,
       "alt": "Arga",
       "socials": [
+        {
+          "icon": "bxl-github",
+          "url": "https://github.com/arga998",
+          "type": "github"
+        },
         {
           "icon": "bxl-instagram",
           "url": "https://www.instagram.com/n_al_arg_setya?igsh=MXZ1MDRjMXYyMTR4Mw==",

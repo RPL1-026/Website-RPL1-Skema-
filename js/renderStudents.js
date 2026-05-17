@@ -40,9 +40,13 @@ export async function renderStudents() {
         let socialsHtml = '';
         if (s.socials && s.socials.length) {
           socialsHtml = s.socials.map(link => {
-            let iconClass = 'bx-images';
-            if (link.type === 'instagram') iconClass = 'bxl-instagram';
-            else if (link.type === 'tiktok') iconClass = 'bxl-tiktok';
+            let iconClass = link.icon;
+            if (!iconClass) {
+              iconClass = 'bx-images';
+              if (link.type === 'instagram') iconClass = 'bxl-instagram';
+              else if (link.type === 'tiktok') iconClass = 'bxl-tiktok';
+              else if (link.type === 'github') iconClass = 'bxl-github';
+            }
             return `<a href="${link.url}" target="_blank"><i class="bx ${iconClass}"></i></a>`;
           }).join('');
         }

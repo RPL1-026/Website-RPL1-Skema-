@@ -34,7 +34,7 @@ export const CONFIG = {
   REKAPAN_URL: 'https://rpl1-026.github.io/rekapan-pembelajaran-rpl1-17/',
 
   // Nostalgia filter values (setelah kelulusan)
-  NOSTALGIA_FILTER: 'sepia(0.15) grayscale(0.1) brightness(0.95)',
+  NOSTALGIA_FILTER: 'sepia(0.15) grayscale(0.25) brightness(0.9)',
 
   // UID akun yang berhak menghapus semua pesan (admin)
   // Cara cek UID: login ke website lalu buka DevTools → Console →

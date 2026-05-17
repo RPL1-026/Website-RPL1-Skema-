@@ -39,6 +39,13 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <!-- css -->
   <link rel="stylesheet" href="style.css" />
+    <!-- Instant Nostalgia Filter -->
+    <script>
+      if (localStorage.getItem('nostalgia_active') === 'true') {
+        var filter = localStorage.getItem('nostalgia_filter') || 'sepia(0.15) grayscale(0.25) brightness(0.9)';
+        document.write('<style id="nostalgia-style">html::before { content: ""; position: fixed; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; z-index: 99990; backdrop-filter: ' + filter + '; -webkit-backdrop-filter: ' + filter + '; }</style>');
+      }
+    </script>
 </head>
 
 <body>
@@ -100,6 +107,9 @@
     </div>
   </section>
 
+  <!-- particles background -->
+  <div id="particles-bg"></div>
+
   <!-- Icon Chat -->
   <div id="chat-icon">
     <i class="bx bx-chat"></i>
@@ -136,6 +146,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
 
   <!-- Chat -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
   <script type="module" src="js/scripts.js"></script>
 
   <!-- Feature modules -->
